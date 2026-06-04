@@ -1,0 +1,18 @@
+${ include('_partials/htmlhead.html') }
+${ include('_partials/header.html') }
+
+<main>
+
+  ${ data?.pagination &&
+    `<h1>${ data.title }${ data.pagination.pageTotal > 1 ? `, page ${ tacs.lib.format.number( data.pagination.pageCurrent1 ) } of ${ tacs.lib.format.number( data.pagination.pageTotal ) }` : ''}</h1>`
+  }
+
+  ${ data.content }
+
+  ${ include('_partials/list.html') }
+
+</main>
+
+<nav id="menudir" popover>${ tacs.lib.nav.menuMain( tacs, data.link ) }</nav>
+
+${ include('_partials/htmlfoot.html') }

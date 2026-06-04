@@ -1,0 +1,33 @@
+.posttags {
+
+  margin-block-start: 2em;
+
+  ul, li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em 0.5em;
+  }
+
+  a:link, a:visited {
+    line-height: 1;
+    text-decoration: none;
+    padding-block: 0.2em;
+    padding-inline: 0.7em;
+    border-radius: 1em;
+    color: var(--color-fore2);
+    background-color: var(--color-back3);
+  }
+
+  a:hover, a:active, a:focus {
+    color: var(--color-back1);
+    background-color: var(--color-hint1);
+  }
+
+}

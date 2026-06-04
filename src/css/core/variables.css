@@ -1,0 +1,111 @@
+/* default variables */
+:root {
+
+  /* fonts */
+  --font-body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-head: --var(font-body);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+  --font-weight-head: 400;
+
+  --fsize--2: clamp(0.6944rem, 0.6597rem + 0.1389vw, 0.7813rem);
+  --fsize--1: clamp(0.8333rem, 0.7917rem + 0.1667vw, 0.9375rem);
+  --fsize-0: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  --fsize-1: clamp(1.2rem, 1.14rem + 0.24vw, 1.35rem);
+  --fsize-2: clamp(1.44rem, 1.368rem + 0.288vw, 1.62rem);
+  --fsize-3: clamp(1.728rem, 1.6416rem + 0.3456vw, 1.944rem);
+  --fsize-4: clamp(2.0736rem, 1.9699rem + 0.4147vw, 2.3328rem);
+  --fsize-5: clamp(2.4883rem, 2.3639rem + 0.4977vw, 2.7994rem);
+
+  /* layout */
+  --header-height: 4rem;
+  --layout-width: 44rem;
+  --layout-sidebar: 18rem;
+  --layout-margin-sidebar: 1.5rem;
+  --layout-margin-min: 3rem;
+  --layout-margin: min(6vw, 6rem);
+  --main-width: min(var(--layout-width), 100% - (2 * var(--layout-margin)));
+  --header-fix-height: calc(var(--header-height) + var(--layout-margin-min));
+
+  /* colors */
+  --color-hue: var(--theme-hue, 270);      /* main hue - just change this value */
+
+  --color-chroma: 4%;
+
+  --color-lum: 21%;     /* luminosity main */
+  --color-lumf: 7%;     /* luminosity factor */
+
+  --color-lumh: 40%;    /* luminosity hint */
+  --color-chromah: 80%; /* chroma hint */
+
+  /* calculated colors */
+  --color-lumf0: calc(var(--color-lum) + (0 * var(--color-lumf)));
+  --color-lumf1: calc(var(--color-lum) + (1 * var(--color-lumf)));
+  --color-lumf2: calc(var(--color-lum) + (2 * var(--color-lumf)));
+  --color-lumf3: calc(var(--color-lum) + (3 * var(--color-lumf)));
+
+  --color-l1: oklch(calc(100% + var(--color-lum) - var(--color-lumf0)) var(--color-chroma) var(--color-hue));
+  --color-l2: oklch(calc(100% + var(--color-lum) - var(--color-lumf1)) var(--color-chroma) var(--color-hue));
+  --color-l3: oklch(calc(100% + var(--color-lum) - var(--color-lumf2)) var(--color-chroma) var(--color-hue));
+  --color-l4: oklch(calc(100% + var(--color-lum) - var(--color-lumf3)) var(--color-chroma) var(--color-hue));
+
+  --color-d1: oklch(var(--color-lumf0) var(--color-chroma) var(--color-hue));
+  --color-d2: oklch(var(--color-lumf1) var(--color-chroma) var(--color-hue));
+  --color-d3: oklch(var(--color-lumf2) var(--color-chroma) var(--color-hue));
+  --color-d4: oklch(var(--color-lumf3) var(--color-chroma) var(--color-hue));
+
+  --color-fore1: light-dark( var(--color-d1), var(--color-l1) );
+  --color-fore2: light-dark( var(--color-d2), var(--color-l2) );
+  --color-fore3: light-dark( var(--color-d3), var(--color-l3) );
+  --color-fore4: light-dark( var(--color-d4), var(--color-l4) );
+
+  --color-back1: light-dark( var(--color-l1), var(--color-d1) );
+  --color-back2: light-dark( var(--color-l2), var(--color-d2) );
+  --color-back3: light-dark( var(--color-l3), var(--color-d3) );
+  --color-back4: light-dark( var(--color-l4), var(--color-d4) );
+
+  --color-hint1: light-dark(
+    oklch(var(--color-lumh) var(--color-chromah) var(--color-hue)),
+    oklch(calc(100% - var(--color-lumh)) var(--color-chromah) var(--color-hue))
+  );
+
+  --color-hint2: light-dark(
+    oklch(50% 20% var(--color-hue)),
+    oklch(60% 20% var(--color-hue))
+  );
+
+  --border-radius1: 5px;
+
+  /* static-search styles */
+  --staticsearch-fontsize: var(--fsize-0);
+
+  --staticsearch-color-back: var(--color-back2);
+  --staticsearch-color-border: var(--color-back3);
+
+  --staticsearch-color-fore0: var(--color-fore1);
+  --staticsearch-color-fore1: var(--color-fore2);
+  --staticsearch-color-fore2: var(--color-fore3);
+
+  --staticsearch-color-link: var(--color-hint1);
+  --staticsearch-color-visited: var(--color-fore4);
+
+  --staticsearch-color-shadow: rgba(0,0,0,0.5);
+  --staticsearch-color-backdrop: color-mix(in oklch, var(--color-back1), transparent 20%);
+  --staticsearch-backdrop-blur: 5px;
+
+}
+
+html, html[data-theme="light"], html:has(input[name="themeswitcher"][value="light"]:checked) {
+	color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
+}
+
+html[data-theme="dark"], html:has(input[name="themeswitcher"][value="dark"]:checked) {
+	color-scheme: dark;
+}

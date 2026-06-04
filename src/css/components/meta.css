@@ -1,0 +1,22 @@
+.meta {
+
+  margin-block-start: 8em;
+
+  &, h2 {
+    font-size: var(--fsize--1);
+  }
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 2em;
+    padding-block-start: 2em;
+    border-block-start: 1px solid var(--color-back3);
+
+    p {
+      margin: 0;
+    }
+  }
+
+}

@@ -1,0 +1,18 @@
+${ (data?.postnext || data?.postback) && '<nav class="backnext"><ul>' }
+
+${ data.directory === 'news' ?
+  `
+    ${ data?.postback?.title ? `<li class="next"><a href="${ data.postback.link }"><span>next &rarr;</span> <strong>${ data.postback.title }</strong></a></li>` : '' }
+
+    ${ data?.postnext?.title ? `<li class="back"><a href="${ data.postnext.link }"><span>&larr; back</span> <strong>${ data.postnext.title }</strong></a></li>` : '' }
+  `
+  :
+  `
+    ${ data?.postnext?.title ? `<li class="next"><a href="${ data.postnext.link }"><span>next &rarr;</span> <strong>${ data.postnext.title }</strong></a></li>` : '' }
+
+    ${ data?.postback?.title ? `<li class="back"><a href="${ data.postback.link }"><span>&larr; back</span> <strong>${ data.postback.title }</strong></a></li>` : '' }
+  `
+}
+
+
+${ (data?.postnext || data?.postback) && '</ul></nav>' }

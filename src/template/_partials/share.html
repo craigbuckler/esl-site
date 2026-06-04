@@ -1,0 +1,11 @@
+<ul class="share">
+
+  <li>share on</li>
+
+  <li hidden><a href="#shareapp" title="share via an app" data-url="${ tacs.config.domain + data.link }" data-title="${ data.title }" data-description="${ data.description }"><svg><use xlink:href="#svg-share"></use></svg> App</a></li>
+
+  <li><a href="mailto:?subject=${ encodeURIComponent(data.title) }&amp;body=${ encodeURIComponent(data.description + '\n' + tacs.config.domain + data.link) }" title="share via email" rel="noopener noreferrer"><svg><use xlink:href="#svg-email"></use></svg> email</a></li>
+
+  <li><a href="https://web.whatsapp.com/send?text=${ encodeURIComponent(data.title + '\n' + data.description + '\n' + tacs.config.domain + data.link) }" title="share via WhatsApp" rel="noopener noreferrer"><svg><use xlink:href="#svg-whatsapp"></use></svg> WhatsApp</a></li>
+
+</ul>

@@ -1,0 +1,142 @@
+body > header {
+
+  position: fixed;
+  inset-block-start: 0;
+  inline-size: 100%;
+  background-color: var(--color-back2);
+  z-index: 1;
+
+  & > div {
+    block-size: var(--header-height);
+    max-inline-size: calc(var(--layout-width) + (2 * var(--layout-sidebar) + (4 * var(--layout-margin) - (3 * var(--layout-margin-sidebar)))));
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    gap: min(1em, 3vi);
+    padding-inline: var(--layout-margin);
+    margin-inline: auto;
+  }
+
+  button {
+    appearance: none;
+    color: inherit;
+    background-color: transparent;
+    border: 0 none;
+    cursor: pointer;
+  }
+
+  p {
+    align-content: center;
+    margin: 0;
+  }
+
+  svg {
+    inline-size: 2em;
+    block-size: 2em;
+    vertical-align: middle;
+  }
+
+  a, button, label {
+
+    &, &:link, &:visited {
+      text-decoration: none;
+      color: var(--color-fore2);
+    }
+
+    &:hover, &:active, &:focus {
+      color: var(--color-hint1);
+      background-color: transparent;
+    }
+
+  }
+
+}
+
+.search {
+  block-size: 50%;
+  align-content: center;
+  padding: 2px 0.2em;
+  margin-inline-start: auto;
+  margin-block-start: calc(0.25 * var(--header-height));
+  background-color: var(--color-back1);
+  border: 1px solid var(--color-fore1);
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover, &:active, &:focus, &:focus-within {
+    border-color: var(--color-hint1);
+  }
+
+  kbd {
+    display: inline-block;
+    font-size: var(--fsize--2);
+    color: var(--staticsearch-color-visited);
+    background-color: transparent;
+    border: 0 none;
+  }
+}
+
+static-search {
+
+  &::part(activate) {
+    display: inline;
+    vertical-align: top;
+    inline-size: 1.5em;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: currentColor;
+    fill: none;
+  }
+
+  &::part(dialog) {
+    backdrop-filter: blur(5px);
+  }
+
+}
+
+.themeswitcher {
+
+  position: relative;
+  inline-size: 1.6em;
+  align-content: center;
+
+  input, span {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+  }
+
+  label {
+    position: absolute;
+    inset-block-start: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
+    transition: opacity 0.3s linear;
+  }
+
+  input:checked + label {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  svg {
+    inline-size: 2em;
+    block-size: 60%;
+  }
+
+  svg:hover, svg:focus, svg:active {
+    stroke: var(--color-hint1);
+  }
+
+  &:focus-within:has(:focus-visible) label {
+    outline-color: color-mix(in srgb, var(--color-hint1) 50%, transparent);
+    outline-style: solid;
+    outline-offset: 0.2em;
+    outline-width: 0.2rem;
+  }
+
+}

@@ -1,0 +1,18 @@
+#top {
+  position: fixed;
+  inset-block-end: 1em;
+  inset-inline-end: 1em;
+  color: var(--color-hint1);
+  outline: 0 none;
+  opacity: 0.2;
+
+  &:hover, &:active, &:focus {
+    opacity: 0.6;
+  }
+
+  svg {
+    block-size: 1.8em;
+    inline-size: 1.8em;
+    fill: currentColor;
+  }
+}

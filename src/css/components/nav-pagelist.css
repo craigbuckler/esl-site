@@ -1,0 +1,15 @@
+/* lists of pages */
+nav.pagelist {
+
+  padding-block: 1em;
+
+  ol, li {
+    list-style-type: square;
+  }
+
+  li {
+    margin-block-start: 0.2em;
+    margin-inline-start: 1em;
+  }
+
+}

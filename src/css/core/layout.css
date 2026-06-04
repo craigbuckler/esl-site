@@ -1,0 +1,20 @@
+/* minimum size */
+main {
+  padding-block-start: var(--header-fix-height);
+  margin-block-end: var(--header-fix-height);
+}
+
+main, .meta, .backnext {
+
+  & > * {
+    inline-size: var(--main-width);
+    margin-inline: auto;
+
+    /* single sidebar */
+    @media (86rem > width > 68rem) {
+      margin-inline-end: var(--layout-margin);
+    }
+
+  }
+
+}

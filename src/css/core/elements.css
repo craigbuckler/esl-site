@@ -1,0 +1,138 @@
+body {
+  font-family: var(--font-body);
+  font-size: var(--fsize-0);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-fore1);
+  background-color: var(--color-back1);
+}
+
+h1, h2, h3 {
+  font-weight: var(--font-weight-head);
+  margin-block-start: 1.5em;
+  color: var(--color-hint2);
+  scroll-margin-block-start: var(--header-fix-height);
+}
+
+h1 { font-size: var(--fsize-5); margin-block-start: 1.5rem; }
+h2 { font-size: var(--fsize-4); }
+h3 { font-size: var(--fsize-3); }
+
+p {
+  margin-block-start: 1.2em;
+}
+
+ul, ol, li {
+  margin-block: 1em 1.5em;
+}
+
+ul {
+  list-style-type: square;
+}
+
+li {
+  margin-block: 0.8em 0;
+  margin-inline: 2em;
+
+  p {
+    margin-block-start: 0.3em;
+  }
+
+  p:first-child {
+    margin-block-start: 0;
+  }
+}
+
+main aside, blockquote {
+  padding-block: 0.75em;
+  padding-inline: 1em;
+  margin-block: 1.5em;
+  color: var(--color-fore2);
+  background-color: var(--color-back3);
+  border-inline-start: 3px solid var(--color-hint1);
+
+  h2, h3, h4 {
+    font-size: var(--fsize-1);
+
+    &::before {
+      display: inline-block;
+      content: '\24D8';
+      padding-inline-end: 0.25em;
+      color: var(--color-fore3);
+    }
+  }
+
+  *:first-child {
+    margin-block-start: 0;
+  }
+
+  p {
+    margin-block-start: 0.6em;
+  }
+
+}
+
+:where(h1, h2, h3, h4, h5, h6) + p {
+  margin-block-start: 0.5em;
+}
+
+figure + * {
+  margin-block-start: 2em;
+}
+
+figure, img, iframe, video, youtube-lite {
+  display: block;
+  margin-block-start: 1em;
+}
+
+figcaption {
+  font-size: var(--fsize--1);
+  margin-block-start: 0.2em;
+}
+
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+kbd {
+  font-weight: var(--font-weight-head);
+  padding-inline: 0.3em;
+  color: var(--color-fore3);
+  background-color: var(--color-back2);
+  border: 1px solid var(--color-hint1);
+  border-block-end-width: 3px;
+  border-radius: 5px;
+}
+
+sup, sub {
+  font-size: var(--fsize--2);
+}
+
+a:link, a:visited {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  color: var(--color-hint1);
+}
+
+a:hover, a:active, a:focus {
+  color: var(--color-fore2);
+}
+
+a.headlink {
+  visibility: hidden;
+  font-size: 0.85em;
+  vertical-align: text-top;
+  text-decoration: none;
+  user-select: none;
+
+  :where(h2, h3):where(:hover, :focus) & {
+    visibility: visible;
+  }
+
+}
+
+svg, use {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: currentColor;
+  fill: none;
+}

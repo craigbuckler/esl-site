@@ -1,0 +1,36 @@
+<header><div>
+
+  <button popovertarget="menudir" popovertargetaction="toggle" title="menu">
+    <svg><use xlink:href="#svg-menu"></use></svg>
+  </button>
+
+  <p id="logo"><a href="${ tacs.root }" title="Documentation">
+    <svg><use xlink:href="#svg-logo"></use></svg> ${ tacs.config.title }
+  </a></p>
+
+  <div class="search" data-static-search="search">
+    <static-search label="search" title="search Ctrl+K">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Zm4 11-6-6"/></svg>
+    </static-search>
+    <kbd data-static-search="search">Ctrl + K</kbd>
+  </div>
+
+  <form class="themeswitcher">
+    <input type="radio" name="themeswitcher" id="themeswitcher_auto" value="" checked>
+
+    <label for="themeswitcher_light" title="system theme"><svg><use xlink:href="#svg-pc"></use></svg><span>system theme</span></label>
+
+    <input type="radio" name="themeswitcher" id="themeswitcher_light" value="light">
+
+    <label for="themeswitcher_dark" title="light theme"><svg><use xlink:href="#svg-sun"></use></svg><span>light theme</span></label>
+
+    <input type="radio" name="themeswitcher" id="themeswitcher_dark" value="dark">
+
+    <label for="themeswitcher_auto" title="dark theme"><svg><use xlink:href="#svg-moon"></use></svg><span>dark theme</span></label>
+  </form>
+
+  <button popovertarget="pagecontents" popovertargetaction="toggle" title="page sections">
+    <svg><use xlink:href="#svg-section"></use></svg>
+  </button>
+
+</div></header>

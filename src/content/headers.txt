@@ -1,0 +1,8 @@
+---
+slug: _headers
+comment: Cloudflare HTTP headers. Access-Control-Allow-Origin: * set by default
+---
+${ tacs.root }*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

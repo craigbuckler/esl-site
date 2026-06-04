@@ -1,0 +1,138 @@
+/* CSS reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  scrollbar-width: thin;
+}
+
+:root {
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+  image-rendering: -webkit-optimize-contrast;
+  interpolate-size: allow-keywords;
+}
+
+@view-transition { navigation: auto; }
+
+html {
+  writing-mode: horizontal-tb;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  line-height: 1.1;
+  touch-action: manipulation;
+}
+
+body:has(dialog[open]), body:has(static-search[aria-expanded]) {
+	overflow: hidden;
+}
+
+img, figure, picture, video, canvas {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+svg {
+  display: inline-block;
+  inline-size: 1em;
+  block-size: 1em;
+  vertical-align: -0.125em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+p, li {
+  line-height: 1.6;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+a {
+  text-decoration-skip-ink: auto;
+}
+
+*:focus-visible {
+  text-decoration: none;
+  outline-color: color-mix(in srgb, var(--color-hint1) 50%, transparent);
+  outline-style: solid;
+  outline-offset: 0.2em;
+  outline-width: 0.2rem;
+}
+
+[hidden] {
+  display: none;
+}
+
+/* web components */
+:not(:defined) {
+  display: none;
+}
+
+nav, summary {
+  user-select: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+}
+
+table, th, td, input, button, textarea, select {
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  color: currentColor;
+}
+
+textarea:not([rows]) {
+  min-block-size: 8em;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+label {
+  user-select: none;
+}
+
+/* disable animations */
+@media (prefers-reduced-motion: reduce) {
+
+  *, *::before, *::after, ::backdrop, ::details-content {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-behavior: normal !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+}
+
+[data-animation="none"] {
+
+  *, *::before, *::after, ::backdrop, ::details-content {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-behavior: normal !important;
+    scroll-behavior: auto !important;
+  }
+
+}

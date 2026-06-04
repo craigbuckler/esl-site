@@ -1,0 +1,65 @@
+/* directory content */
+#menudir {
+
+  font-size: var(--fsize--1);
+  position: fixed;
+  inline-size: min(var(--layout-sidebar), 100vi);
+  block-size: auto;
+  inset: var(--header-height) auto 0 0;
+  padding: var(--layout-margin-min) var(--layout-margin-sidebar);
+  border: 0 none;
+  background-color: var(--color-back2);
+  overflow-block: auto;
+  overscroll-behavior: contain;
+  transition: transform 0.3s ease;
+
+  &:popover-open {
+    display: block;
+    transform: none;
+
+    @starting-style {
+      transform: translateX(-100%);
+    }
+
+  }
+
+  & > menu {
+    padding: 0;
+    margin: 0;
+  }
+
+  details {
+    margin-block-end: 1em;
+  }
+
+}
+
+@media (width > 68rem) {
+
+  button[popovertarget="menudir"] {
+    display: none;
+  }
+
+  #menudir {
+
+    display: block;
+    inline-size: calc((100% - var(--main-width)) - var(--layout-margin) * 2);
+    padding-inline-end: 0.8em;
+    border-block-start: 1px solid var(--color-back1);
+
+    & > menu {
+      float: inline-end;
+      inline-size: calc(var(--layout-sidebar) - (2 * var(--layout-margin-sidebar)));
+    }
+
+  }
+
+}
+
+@media (width > 86rem) {
+
+  #menudir {
+    inline-size: calc((100% - var(--main-width)) / 2 - var(--layout-margin));
+  }
+
+}

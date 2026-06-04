@@ -1,0 +1,27 @@
+/**
+ * Cloudflare wrangler configuration:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+  "name": "esl-site",
+  "compatibility_date": "2026-06-04",
+  "workers_dev": true,
+  "build": {
+    "command": "npm run build"
+  },
+  "assets": {
+    // build
+    "directory": "./build/",
+    // 404 page (MPA rather than SPA)
+    "not_found_handling": "404-page"
+  },
+  "observability": {
+    "enabled": false
+  }
+  // "routes": [
+  //   {
+  //     "pattern": "www.exeter-student-lets.co.uk",
+  //     "custom_domain": true
+  //   }
+  // ]
+}
