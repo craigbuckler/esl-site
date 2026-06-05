@@ -1,8 +1,12 @@
 // Publican configuration
 import { Publican, tacs } from 'publican';
 import { libInit, env, apiFetch, sortBy, normalize } from 'publican.lib';
+import { renderstartData } from 'publican.lib/hook';
+import { renderstartTag } from './lib/hook.js';
+import * as nav from './lib/nav.js';
+import { imageInfo, allImageInfo } from './lib/image.js';
+
 import { staticsearch } from 'staticsearch';
-import { articleLink } from './lib/nav.js';
 import esbuild from 'esbuild';
 
 // load property data from API
@@ -36,13 +40,12 @@ publican.config.root = env('BUILD_ROOT');
 // default HTML templates
 publican.config.defaultHTMLTemplate = env('TEMPLATE_DEFAULT');
 publican.config.dirPages.template = env('TEMPLATE_LIST');
+publican.config.tagPages.template = env('TEMPLATE_TAG');
 
 // configuration
 publican.config.markdownOptions.prism = null;
-publican.config.dirPages.size = 24;
-publican.config.dirPages.sortBy = 'slug';
-publican.config.dirPages.sortOrder = -1;
-publican.config.tagPages = false;
+publican.config.dirPages.size = 48;
+publican.config.tagPages.size = 48;
 
 // pass-through files
 publican.config.passThrough.add({ from: './src/media', to: './media/' });
@@ -69,20 +72,23 @@ tacs.config.buildDate = new Date();
 libInit(publican, tacs);
 tacs.lib.format.setLocale( tacs.config.language );
 
+// replace publican.lib hook
+publican.config.processRenderStart.delete( renderstartData );
+publican.config.processRenderStart.add( renderstartTag );
+
 // define custom functions
 tacs.fn = tacs.fn || {};
-tacs.fn.articleLink = articleLink;
+tacs.fn.nav = nav;
 
 // create virtual content
-property.forEach(async p => {
-
-  // TODO: fetch photo and plan images
+property.forEach(async (p, idx) => {
 
   const
     period = p.period.sort(sortBy('datefrom')).at(0),
     prop = {
       code: p.code,
       type: p.type,
+      title: `${ p.street }, ${ p.town } ${ p.postcode }`,
       occupants: p.occupants,
       bedrooms: p.bedrooms,
       bathrooms: p.bathrooms,
@@ -95,29 +101,32 @@ property.forEach(async p => {
       lng: p.lng,
       unimeters: p.unimetres,
       unimins: Math.ceil(p.unimetres / 200),
-      videoID: p.video.replace('https://youtu.be/', ''),
+      videoID: p.video.replace('https://youtu.be/', '').replace('https://www.youtube.com/watch?v=', ''),
       year: period.code,
       datefrom: period.datefrom,
       dateto: period.dateto,
       depositholding: +period.depositholding,
       depositremainder: +period.depositremainder,
-      deposit: +period.depositholding +period.depositremainder,
+      deposit: +period.depositholding + period.depositremainder,
       priceweek: period.priceweek,
       weeks: Math.round( ( new Date(period.dateto) - new Date(period.datefrom) ) / (1000 * 60 * 60 * 24 * 7) ),
       let: period.let,
+      plan: await imageInfo( `media/plan/${ p.code }-plan.webp`, './src/', publican.config.root ),
+      photo: await allImageInfo( `media/photo/${ p.code }`, './src/', publican.config.root ),
     };
 
   // add property page
   publican.addContent(
-    `${ prop.type }s/${ normalize(`${ prop.occupants }-bed-${ prop.street }-exeter-${ prop.postcode }`) }/index.md`,
+    `${ prop.type }/${ normalize(`${ prop.occupants }-bed-${ prop.street }-exeter-${ prop.postcode }`) }.md`,
     p.description.replaceAll('\n', '\n\n'),
     {
-      title: `${ p.street }, ${ p.town } ${ p.postcode }`,
-      menu: p.street,
+      title: prop.title,
+      menu: prop.street,
       prop,
       index: 'weekly',
       template: 'property.html',
-      group: 'property'
+      tags: [ prop.type, `${ prop.bedrooms }-bed` ],
+      priority: 1 - (idx / 100),
     }
   );
 

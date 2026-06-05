@@ -1,11 +1,13 @@
 <aside class="meta">
 
+  ${ include('_partials/pagetags.html') }
+
   ${ include('_partials/share.html') }
 
   ${ data?.related?.length ? `
-    <h2>Related posts</h2>
+    <h2>Similar properties</h2>
     <nav class="pagelist"><ol>
-      ${ data.related.slice(0,3).map(p => tacs.fn.articleLink(p)).join('') }
+      ${ data.related.slice(0,3).map(p => tacs.fn.nav.articleLink(p)).join('') }
     </ol></nav>
   ` : '' }
 

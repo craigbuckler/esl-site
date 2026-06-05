@@ -13,7 +13,7 @@ npm i
 Create an `.env` file that sets:
 
 ```ini
-API_URL="data-source>"
+API_URL="<data-source>"
 API_TOKEN="<secret=key>"
 
 # development data caching

@@ -1,6 +1,6 @@
 ${ data?.pagination?.page?.length && `
   <nav class="pagelist"><ol>
-    ${ data?.pagination?.page.map(p => tacs.fn.articleLink(p)).join('') }
+    ${ data?.pagination?.page.map(p => tacs.fn.nav.articleLink(p)).join('') }
   </ol></nav>
 ` }
 
