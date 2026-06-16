@@ -13,10 +13,10 @@ To arrange a viewing and secure your property please contact:
 
 Please include:
 
-* the property you want to view
+* the address of the property you want to view
 * your name
 * your telephone number
-* the names of other students
+* the names of the other students
 
 
 ## Application information
@@ -29,7 +29,7 @@ All properties:
 
 * are fully compliant with HMO requirements and have regular gas, electricity, appliance, and fire safety inspections.
 
-To reserve a property, all students must:
+To reserve a property following a viewing, all students must:
 
 1. Provide their details, their guarantor's details, and sign an **Initial Holding Deposit** agreement.
 

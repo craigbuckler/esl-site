@@ -13,3 +13,5 @@ We specialise in affordable, quality, fully-furnished student [houses](__/house/
 Our properties are decorated to a high standard, with modern fitted kitchens and attractive, stylish furniture. They provide excellent facilities, are light, spacious and always in great demand.
 
 Our friendly, professional, and prompt accommodation service provides a rapid response to all queries. We maintain regular contact with our occupants and quickly rectify problems.
+
+${ tacs.fn.nav.propertyList() }

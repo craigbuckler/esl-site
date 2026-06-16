@@ -41,8 +41,10 @@ publican.config.root = env('BUILD_ROOT');
 publican.config.defaultHTMLTemplate = env('TEMPLATE_DEFAULT');
 publican.config.dirPages.template = env('TEMPLATE_LIST');
 publican.config.tagPages.template = env('TEMPLATE_TAG');
+publican.config.tagPages.root = env('TAG_ROOT', 'tag');
 
 // configuration
+publican.config.headingAnchor = false;
 publican.config.markdownOptions.prism = null;
 publican.config.dirPages.size = 48;
 publican.config.tagPages.size = 48;
@@ -81,56 +83,45 @@ tacs.fn = tacs.fn || {};
 tacs.fn.nav = nav;
 
 // create virtual content
-property.forEach(async (p, idx) => {
+for (let idx = 0; idx < property?.length || 0; idx++) {
 
   const
-    period = p.period.sort(sortBy('datefrom')).at(0),
-    prop = {
-      code: p.code,
-      type: p.type,
-      title: `${ p.street }, ${ p.town } ${ p.postcode }`,
-      occupants: p.occupants,
-      bedrooms: p.bedrooms,
-      bathrooms: p.bathrooms,
-      receptions: p.receptions,
-      street: p.street,
-      town: p.town,
-      postcode: p.postcode,
-      epc: p.epc,
-      lat: p.lat,
-      lng: p.lng,
-      unimeters: p.unimetres,
-      unimins: Math.ceil(p.unimetres / 200),
-      videoID: p.video.replace('https://youtu.be/', '').replace('https://www.youtube.com/watch?v=', ''),
-      year: period.code,
-      datefrom: period.datefrom,
-      dateto: period.dateto,
-      depositholding: +period.depositholding,
-      depositremainder: +period.depositremainder,
-      deposit: +period.depositholding + period.depositremainder,
-      priceweek: period.priceweek,
-      weeks: Math.round( ( new Date(period.dateto) - new Date(period.datefrom) ) / (1000 * 60 * 60 * 24 * 7) ),
-      let: period.let,
-      plan: await imageInfo( `media/plan/${ p.code }-plan.webp`, './src/', publican.config.root ),
-      photo: await allImageInfo( `media/photo/${ p.code }`, './src/', publican.config.root ),
-    };
+    p = property[idx],
+    period = p.period.sort(sortBy('datefrom')).at(0);
+
+  // append data
+  p.year = period.code;
+  p.title = `${ p.street }, ${ p.town } ${ p.postcode }`;
+  p.unimins = Math.round(p.unimetres / 90);
+  p.videoID = p.video.replace('https://youtu.be/', '').replace('https://www.youtube.com/watch?v=', '');
+  p.datefrom = period.datefrom;
+  p.dateto = period.dateto;
+  p.depositholding = +period.depositholding;
+  p.depositremainder = +period.depositremainder;
+  p.deposit = +period.depositholding + period.depositremainder;
+  p.priceweek = period.priceweek;
+  p.weeks = Math.round( ( new Date(period.dateto) - new Date(period.datefrom) ) / (1000 * 60 * 60 * 24 * 7) );
+  p.let = period.let;
+  p.plan = await imageInfo( `media/plan/${ p.code }-plan.webp`, './src/', publican.config.root );
+  p.photo = await allImageInfo( `media/photo/${ p.code }`, './src/', publican.config.root );
 
   // add property page
   publican.addContent(
-    `${ prop.type }/${ normalize(`${ prop.occupants }-bed-${ prop.street }-exeter-${ prop.postcode }`) }.md`,
+    `${ p.type }/${ normalize(`${ p.occupants }-bed-${ p.street }-exeter-${ p.postcode }`) }.md`,
     p.description.replaceAll('\n', '\n\n'),
     {
-      title: prop.title,
-      menu: prop.street,
-      prop,
+      title: p.title,
+      menu: p.street,
+      description: `${ p.bedrooms }-bed student ${ p.type } in Exeter, ${ p.let ? `currently let for ${ p.code }` : `available ${ tacs.lib.format.dateHuman(p.datefrom) } for ${ tacs.lib.format.currency(p.priceweek, 'GBP') } per student per week` }.`,
+      prop: p,
       index: 'weekly',
       template: 'property.html',
-      tags: [ prop.type, `${ prop.bedrooms }-bed` ],
+      tags: [ p.type, `${ p.bedrooms }-bed` ],
       priority: 1 - (idx / 100),
     }
   );
 
-});
+}
 
 // utils
 publican.config.minify.enabled = !isDev;  // minify in production mode

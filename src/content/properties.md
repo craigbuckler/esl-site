@@ -7,4 +7,4 @@ priority: 0.2
 
 ${ data.description }
 
-${ tacs.fn.nav.tagList( tacs ) }
+${ tacs.fn.nav.tagList() }
