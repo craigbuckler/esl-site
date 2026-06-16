@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Verdana Fallback';
+    src: local(Verdana);
+    size-adjust: 88%;
+    ascent-override: 114%;
+    descent-override: 30%;
+    line-gap-override: normal;
+}
+
+@supports (font-variation-settings: normal) {
+
+  @font-face {
+    font-family: 'Outfit';
+    src: url('/media/fonts/outfit.woff2') format('woff2 supports variations'),
+         url('/media/fonts/outfit.woff2') format('woff2-variations');
+    font-feature-settings: 'liga', 'salt';
+    font-display: fallback;
+    font-style: normal;
+    font-weight: 100 900;
+  }
+
+}

@@ -7,27 +7,11 @@ body > header {
   z-index: 1;
 
   & > div {
-    block-size: var(--header-height);
-    max-inline-size: calc(var(--layout-width) + (2 * var(--layout-sidebar) + (4 * var(--layout-margin) - (3 * var(--layout-margin-sidebar)))));
     display: flex;
     align-content: center;
     justify-content: flex-start;
-    gap: min(1em, 3vi);
-    padding-inline: var(--layout-margin);
+    gap: 0.3em;
     margin-inline: auto;
-  }
-
-  button {
-    appearance: none;
-    color: inherit;
-    background-color: transparent;
-    border: 0 none;
-    cursor: pointer;
-  }
-
-  p {
-    align-content: center;
-    margin: 0;
   }
 
   svg {
@@ -52,46 +36,60 @@ body > header {
 
 }
 
-.search {
-  block-size: 50%;
-  align-content: center;
-  padding: 2px 0.2em;
-  margin-inline-start: auto;
-  margin-block-start: calc(0.25 * var(--header-height));
-  background-color: var(--color-back1);
-  border: 1px solid var(--color-fore1);
-  border-radius: 4px;
-  cursor: pointer;
+.logo {
 
-  &:hover, &:active, &:focus, &:focus-within {
-    border-color: var(--color-hint1);
+  line-height: 1;
+  margin: 0;
+
+  svg {
+    inline-size: 3.8em;
+    block-size: 3.8em;
   }
 
-  kbd {
+  svg, span {
     display: inline-block;
-    font-size: var(--fsize--2);
-    color: var(--staticsearch-color-visited);
-    background-color: transparent;
-    border: 0 none;
+    vertical-align: middle;
   }
+
+  strong, em {
+    display: block;
+  }
+
+  strong {
+    font-size: 1.75em;
+    font-weight: 900;
+  }
+
+  em {
+    font-weight: 400;
+  }
+
+}
+
+.contact {
+  margin-inline-start: auto;
 }
 
 static-search {
 
+  inline-size: 2em;
+  align-content: center;
+  padding-block-start: 0.3em;
+  margin-inline-start: auto;
+
   &::part(activate) {
-    display: inline;
-    vertical-align: top;
-    inline-size: 1.5em;
+    outline: 0 none;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke: currentColor;
+    stroke-width: 1.5px;
     fill: none;
   }
 
-  &::part(dialog) {
-    backdrop-filter: blur(5px);
-  }
+}
 
+static-search:not(:defined) + .themeswitcher {
+  margin-inline-start: auto;
 }
 
 .themeswitcher {

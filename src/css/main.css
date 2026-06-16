@@ -1,22 +1,30 @@
+@import url('./core/fonts.css');
 @import url('./core/reset.css') layer(reset);
 @import url('./core/variables.css');
-@import url('./core/layout.css');
 @import url('./core/elements.css');
+@import url('./core/layout.css');
+
+@import url('./components/header.css');
+@import url('./components/title.css');
+@import url('./components/nav-properties.css');
+@import url('./components/nav-backnext.css');
+
+
+/*
 @import url('./core/details.css');
 @import url('./core/tables.css');
 @import url('./core/utility.css');
 
-@import url('./components/header.css');
-@import url('./components/title.css');
+
 @import url('./components/nav-menudir.css');
 @import url('./components/nav-heading.css');
 @import url('./components/nav-pagelist.css');
 @import url('./components/nav-posttags.css');
 @import url('./components/nav-pagination.css');
-@import url('./components/nav-backnext.css');
 @import url('./components/nav-taglist.css');
 @import url('./components/meta.css');
 @import url('./components/share.css');
 @import url('./components/footer.css');
 
 @import url('./core/print.css');
+*/

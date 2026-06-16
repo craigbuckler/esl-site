@@ -3,9 +3,11 @@ ${ include('_partials/header.html') }
 
 <main>
 
-  ${ data?.pagination &&
-    `<h1>${ tacs.lib.format.number( data.childPageTotal ) } ${ data.title }${ data.pagination.pageTotal > 1 ? `, page ${ tacs.lib.format.number( data.pagination.pageCurrent1 ) } of ${ tacs.lib.format.number( data.pagination.pageTotal ) }` : ''}</h1>`
-  }
+  <header>
+    ${ data?.pagination &&
+      `<h1>${ tacs.lib.format.number( data.childPageTotal ) } ${ data.title }${ data.pagination.pageTotal > 1 ? `, page ${ tacs.lib.format.number( data.pagination.pageCurrent1 ) } of ${ tacs.lib.format.number( data.pagination.pageTotal ) }` : ''}</h1>`
+    }
+  </header>
 
   ${ include('_partials/list.html') }
 
@@ -14,7 +16,5 @@ ${ include('_partials/header.html') }
   ${ tacs.fn.nav.tagList() }
 
 </main>
-
-<nav id="menudir" popover>${ tacs.lib.nav.menuMain( tacs, data.link, 1 ) }</nav>
 
 ${ include('_partials/htmlfoot.html') }

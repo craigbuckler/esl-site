@@ -44,7 +44,6 @@ svg {
   display: inline-block;
   inline-size: 1em;
   block-size: 1em;
-  vertical-align: -0.125em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -53,9 +52,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, li {
-  line-height: 1.6;
+  line-height: 1.3;
   text-wrap: pretty;
   overflow-wrap: break-word;
+}
+
+em, i {
+  font-style: normal;
 }
 
 a {
@@ -104,6 +107,11 @@ table {
   border-spacing: 0;
 }
 
+table, th, td {
+  font-feature-settings: 'tnum';
+  font-variant-numeric: tabular-nums;
+}
+
 label {
   user-select: none;
 }
@@ -121,18 +129,6 @@ label {
 
   html {
     scroll-behavior: auto;
-  }
-
-}
-
-[data-animation="none"] {
-
-  *, *::before, *::after, ::backdrop, ::details-content {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    transition-behavior: normal !important;
-    scroll-behavior: auto !important;
   }
 
 }

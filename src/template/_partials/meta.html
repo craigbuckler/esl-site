@@ -6,9 +6,9 @@
 
   ${ data?.related?.length ? `
     <h2>Similar properties</h2>
-    <nav class="related"><ul>
+    <nav class="properties"><ol>
       ${ data.related.slice(0,3).map(p => tacs.fn.nav.articleLink(p)).join('') }
-    </ul></nav>
+    </ol></nav>
   ` : '' }
 
 </aside>
