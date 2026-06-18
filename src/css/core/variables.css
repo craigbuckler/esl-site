@@ -18,8 +18,8 @@
   --fsize-5: clamp(3.4332rem, 2.7104rem + 2.4093vw, 4.5776rem);
 
   /* layout */
-  --header-height: 5rem;
-  --layout-width: 56rem;
+  --header-height: 5ch;
+  --layout-width: 58ch;
   --layout-margin: min(4vw, 4ch);
   --main-width: min(var(--layout-width), 100% - (2 * var(--layout-margin)));
   --header-fix-height: calc(var(--header-height) + 1em);

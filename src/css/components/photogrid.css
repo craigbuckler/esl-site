@@ -1,0 +1,24 @@
+/* photo handler */
+.photogrid {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat( auto-fit, minmax(8em, 1fr));
+  gap: 2px;
+  margin: 0;
+
+  img {
+    block-size: 100%;
+    inline-size: 100%;
+    object-fit: cover;
+    margin: 0;
+  }
+
+  .land {
+    grid-column-start: span 2;
+  }
+
+  .port {
+    grid-row-start: span 2;
+  }
+
+}

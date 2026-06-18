@@ -9,5 +9,5 @@ main, body > header, .meta, .backnext {
 }
 
 main {
-  padding-block-start: var(--header-fix-height);
+  padding-block-start: calc( var(--header-fix-height) + 2ch );
 }

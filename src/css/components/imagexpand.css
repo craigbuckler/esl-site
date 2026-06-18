@@ -1,0 +1,66 @@
+.imagexpand img {
+  cursor: zoom-in;
+}
+
+dialog.imgopen {
+  position: fixed;
+  inline-size: 100dvi;
+  block-size: 100dvb;
+  max-inline-size: calc(100dvi - (2 * var(--pad)));
+  max-block-size: calc(100dvb - (2 * var(--pad)));
+  margin: auto;
+  padding: 0;
+  border: 0 none;
+  outline: 0 none;
+  background-color: transparent;
+  overflow: hidden;
+  transform-origin: 50%;
+
+  img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    aspect-ratio: none;
+    object-fit: contain;
+    cursor: zoom-out;
+  }
+
+  &, &::backdrop {
+    transition: all 0.3s ease-in-out;
+    transition-behavior: allow-discrete;
+  }
+
+  &[open] {
+
+    opacity: 1;
+    transform: scale(1);
+
+    @starting-style {
+      display: block;
+      opacity: 0.5;
+      transform: scaleX(0.5) scaleY(0.2);
+    }
+
+    &::backdrop {
+      background-color: rgba(0,0,0,0.8);
+      backdrop-filter: blur(3px);
+
+      @starting-style {
+        background-color: rgba(0,0,0,0);
+        backdrop-filter: blur(0);
+      }
+
+    }
+
+  }
+
+  &:not([open]) {
+    display: none;
+    opacity: 0;
+    transform: scaleX(0.5) scaleY(0.2);
+  }
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}

@@ -1,25 +1,22 @@
 ---
-title: Apply for an occupancy
+title: Apply for occupancy
 menu: Apply
 description: How to contact us to arrange a viewing of a student property in Exeter.
 priority: 0.8
 ---
 
-To arrange a viewing and secure your property please contact:
+To arrange a viewing and secure a property please contact:
 
 [07740 309 077](tel:+44-7740-309077)
 
-[info@exeter-student-lets.co.uk](mailto:info@exeter-student-lets.co.uk?subject=property%20viewing&amp;body=property:%20%0D%0A%0D%0Ayour%20name:%20%0D%0Ayour%20phone:%20%0D%0A%0D%0Astudents:%20%0D%0A)
+<a href="#" data-email="">info {at} exeter-student-lets dot co dot uk</a>
 
 Please include:
 
-* the address of the property you want to view
+* the address of the property
 * your name
 * your telephone number
 * the names of the other students
-
-
-## Application information
 
 All properties:
 
@@ -31,7 +28,7 @@ All properties:
 
 To reserve a property following a viewing, all students must:
 
-1. Provide their details, their guarantor's details, and sign an **Initial Holding Deposit** agreement.
+1. Provide their details, their guarantor's details, and sign the **Initial Holding Deposit** agreement.
 
 1. Pay a holding deposit.
 

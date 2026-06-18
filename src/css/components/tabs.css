@@ -1,0 +1,114 @@
+/* tabs */
+.tabset {
+
+  &, li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  display: flex;
+  font-size: var(--fsize--1);
+  padding-inline: 4px;
+  margin-block-start: 1.5em;
+  border-block-end: 2px solid var(--color-back3);
+
+  a:link, a:visited {
+    display: block;
+    font-weight: 400;
+    inline-size: auto;
+    text-align: center;
+    text-decoration: none;
+    padding-inline: 0.5em;
+    padding-block: 0.2em;
+    margin-block-end: -2px;
+    background-color: var(--color-back2);
+    border: 2px solid var(--color-back3);
+    border-radius: var(--border-radius1) var(--border-radius1) 0 0;
+    z-index: 1;
+
+    li:not(:first-of-type) & {
+      border-inline-start: 0 none;
+    }
+  }
+
+  a:hover, a:active, a:focus {
+    background-color: var(--color-back1);
+    border-block-end-color: var(--color-back1);
+  }
+
+  svg {
+    inline-size: 2.8em;
+    block-size: 2.8em;
+    vertical-align: center;
+  }
+
+  strong {
+    display: none;
+  }
+
+  @media (width > 38rem) {
+
+    a:link, a:visited {
+      inline-size: 6em;
+      padding-block: 0.4em;
+      padding-inline: 0;
+    }
+
+    svg {
+      inline-size: 1.2em;
+      block-size: 1.2em;
+    }
+
+    strong {
+      display: inline-block;
+    }
+  }
+
+}
+
+.tabs {
+
+  section {
+    block-size: 70vb;
+    scroll-margin-block-start: max(calc(var(--header-fix-height) + 2em), 25vb);
+    overflow-block: auto;
+  }
+
+  section:not(:target) {
+    display: none;
+  }
+
+  /* no active target */
+  &:not(:has(:target)) {
+
+    section:first-of-type {
+      display: block;
+    }
+
+  }
+
+  &:not(:has(:target)) .tabset a[href="#overview"],
+  &:has(#overview:target) .tabset a[href="#overview"],
+  &:has(#description:target) .tabset a[href="#description"],
+  &:has(#photos:target) .tabset a[href="#photos"],
+  &:has(#video:target) .tabset a[href="#video"],
+  &:has(#plan:target) .tabset a[href="#plan"],
+  &:has(#map:target) .tabset a[href="#map"] {
+    color: var(--color-fore1);
+    background-color: var(--color-back1);
+    border-block-end-color: var(--color-back1);
+  }
+
+}
+
+#video youtube-lite, #plan img, #map iframe {
+  block-size: 100%;
+  inline-size: 100%;
+  margin-block: 0;
+  margin-inline: auto;
+}
+
+#plan img {
+  inline-size: auto;
+}

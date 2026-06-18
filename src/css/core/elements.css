@@ -118,17 +118,30 @@ a:hover, a:active, a:focus {
   color: var(--color-fore2);
 }
 
-a.headlink {
-  visibility: hidden;
-  font-size: 0.85em;
-  vertical-align: text-top;
-  text-decoration: none;
-  user-select: none;
+a.button {
 
-  :where(h2, h3):where(:hover, :focus) & {
-    visibility: visible;
+  &:link, &:visited {
+    display: block;
+    inline-size: fit-content;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    padding-inline: 2em;
+    padding-block: 0.4em;
+    margin: 1em auto;
+    color: var(--color-back1);
+    background-color: var(--color-hint1);
+    border-radius: var(--border-radius1);
   }
 
+  &:hover, &:active, &:focus {
+    background-color: var(--color-hint2);
+  }
+
+}
+
+.note {
+  font-size: var(--fsize--1);
 }
 
 svg, use {
@@ -136,4 +149,5 @@ svg, use {
   stroke-linejoin: round;
   stroke: currentColor;
   fill: none;
+  stroke-width: 2;
 }

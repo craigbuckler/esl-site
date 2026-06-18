@@ -81,6 +81,7 @@ publican.config.processRenderStart.add( renderstartTag );
 // define custom functions
 tacs.fn = tacs.fn || {};
 tacs.fn.nav = nav;
+tacs.fn.sortBy = sortBy;
 
 // create virtual content
 for (let idx = 0; idx < property?.length || 0; idx++) {
@@ -112,7 +113,7 @@ for (let idx = 0; idx < property?.length || 0; idx++) {
     {
       title: p.title,
       menu: p.street,
-      description: `${ p.bedrooms }-bed student ${ p.type } in Exeter, ${ p.let ? `currently let for ${ p.code }` : `available ${ tacs.lib.format.dateHuman(p.datefrom) } for ${ tacs.lib.format.currency(p.priceweek, 'GBP') } per student per week` }.`,
+      description: `${ p.bedrooms }-bed student ${ p.type } in Exeter, ${ p.let ? `currently let for ${ p.code }` : `available from ${ tacs.lib.format.dateHuman(p.datefrom) } for ${ tacs.lib.format.currency(p.priceweek, 'GBP') } per student per week.` }.`,
       prop: p,
       index: 'weekly',
       template: 'property.html',

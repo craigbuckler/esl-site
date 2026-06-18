@@ -1,13 +1,13 @@
 .share {
 
-  list-style-type: none;
+  inline-size: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 1em;
-  margin-block: 2em;
+  justify-content: flex-start;
+  gap: 0.6em;
 
-  li {
+  &, li {
+    list-style-type: none;
     padding: 0;
     margin: 0;
   }
@@ -17,8 +17,8 @@
     text-decoration: none;
 
     svg {
-      inline-size: 1.8em;
-      block-size: 1.8em;
+      inline-size: 1.2em;
+      block-size: 1.2em;
       vertical-align: middle;
     }
 

@@ -1,40 +1,107 @@
 ${ include('_partials/htmlhead.html') }
 ${ include('_partials/header.html') }
 
-<main>
+<main id="${ data.prop.code }" data-property="${ data.title }" data-beds="${ data.prop.bedrooms }" data-datefrom="${ data.prop.let ? '' : tacs.lib.format.dateHuman( data.prop.datefrom ) }">
 
   ${ include('_partials/title.html') }
 
-  <p>bedrooms: ${ tacs.lib.format.number( data.prop.bedrooms ) }</p>
-  <p>bathrooms: ${ tacs.lib.format.number( data.prop.bathrooms ) }</p>
-  <p>receptions: ${ tacs.lib.format.number( data.prop.receptions ) }</p>
+  <div class="tabs">
 
-  <p>contact: ${ tacs.lib.format.number( data.prop.weeks ) } weeks</p>
-  <p>from: ${ tacs.lib.format.dateHuman( data.prop.datefrom ) }</p>
-  <p>to: ${ tacs.lib.format.dateHuman( data.prop.dateto ) }</p>
+    <ul class="tabset">
+      <li><a href="#overview"><svg><use xlink:href="#svg-table"></use></svg> <strong>Details</strong></a></li>
+      <li><a href="#description"><svg><use xlink:href="#svg-info"></use></svg> <strong>Info</strong></a></li>
+      ${ data.prop.photo ? '<li><a href="#photos"><svg><use xlink:href="#svg-camera"></use></svg> <strong>Photos</strong></a></li>' : '' }
+      ${ data.prop.videoID ? '<li><a href="#video"><svg><use xlink:href="#svg-video"></use></svg> <strong>Video</strong></a></li>' : '' }
+      ${ data.prop.plan ? '<li><a href="#plan"><svg><use xlink:href="#svg-compass"></use></svg> <strong>Plan</strong></a></li>' : '' }
+      <li><a href="#map"><svg><use xlink:href="#svg-mappin"></use></svg> <strong>Map</strong></a></li>
+    </ul>
 
-  <p>deposit: ${ tacs.lib.format.currency( data.prop.deposit, 'GBP' ) } per student</p>
-  <p>charges: ${ tacs.lib.format.currency( data.prop.priceweek, 'GBP' ) } per student per week excluding bills</p>
+    <section id="overview">
 
-  <p>distance: ${ tacs.lib.format.number( data.prop.unimins ) }-minute walk to University</p>
+      <dl>
 
-  <p>EPC: ${ data.prop.epc }</p>
+        <dt><svg><use xlink:href="#svg-bed"></use></svg> bedrooms</dt>
+        <dd>${ tacs.lib.format.number( data.prop.bedrooms ) }</dd>
 
-  ${ data.content }
+        <dt><svg><use xlink:href="#svg-bath"></use></svg> bathrooms</dt>
+        <dd>${ tacs.lib.format.number( data.prop.bathrooms ) }</dd>
 
-  <p>The property is fully compliant with HMO requirements and has regular gas, electricity, appliance, and fire safety inspections.</p>
+        <dt><svg><use xlink:href="#svg-sofa"></use></svg> reception rooms</dt>
+        <dd>${ tacs.lib.format.number( data.prop.receptions ) }</dd>
 
-  <p>Communal areas and bedrooms are cleaned every week. This includes a wipe-down of surfaces and sinks with light vacuuming and dusting. Students remain responsible for general cleanliness such as washing dishes, emptying bins etc.</p>
+        <dt><svg><use xlink:href="#svg-walk"></use></svg> distance</dt>
+        <dd>${ tacs.lib.format.number( data.prop.unimins ) }-minute walk to University</dd>
 
-  <p>To reserve the property, all students must pay a holding deposit of ${ tacs.lib.format.currency( data.prop.depositholding, 'GBP' ) } each. The remainder deposit of ${ tacs.lib.format.currency( data.prop.depositremainder, 'GBP' ) } is payable by each student at the signing of the contract. Deposits are protected by <a href="https://www.mydeposits.co.uk/">MyDeposits</a>.</p>
+        <dt>available from</dt>
+        <dd>${ tacs.lib.format.dateHuman( data.prop.datefrom ) }</dd>
 
-  ${ data?.prop?.photo.map((i, ix) => `<img src="${ i.src }" width="${ i.width || 600 }" height="${ i.height || 600 }" alt="${ tacs.lib.feed.escape( data.prop.title ) } photograph ${ ix+1 }">`).join('') }
+        <dt>to</dt>
+        <dd>${ tacs.lib.format.dateHuman( data.prop.dateto ) }</dd>
 
-  ${ data.prop.videoID ? `<youtube-lite video="${ data.prop.videoID }"></youtube-lite>` : '' }
+        <dt>contract length</dt>
+        <dd>${ tacs.lib.format.number( data.prop.weeks ) } weeks</dd>
 
-  ${ data.prop.plan ? `<img src="${ data.prop.plan.src }" width="${ data.prop.plan.width || 600 }" height="${ data.prop.plan.height || 600 }" alt="plan of ${ tacs.lib.feed.escape( data.prop.title ) }" loading="lazy">` : '' }
+        <dt><abbr title="Energy Performance Certificate">EPC</abbr></dt>
+        <dd>${ data.prop.epc }</dd>
 
-  <iframe src="https://maps.google.com/maps?q=${ data.prop.lat },${ data.prop.lng }&amp;hl=en&amp;z=15&amp;ie=UTF8&amp;output=embed" scrolling="no" marginheight="0" marginwidth="0" loading="lazy" width="100%" height="500px" frameborder="0"></iframe>
+        <dt>total deposit</dt>
+        <dd>${ tacs.lib.format.currency( data.prop.deposit, 'GBP' ).replace('.00', '') } per student</dd>
+
+        <dt class="charge">occupancy charge</dt>
+        <dd>${ tacs.lib.format.currency( data.prop.priceweek, 'GBP' ).replace('.00', '') } per student per week</dd>
+
+        <dt>utility bills</dt>
+        <dd>not included</dd>
+
+        <dt>services</dt>
+        <dd>communal areas and bedrooms are cleaned every week</dd>
+
+      </dl>
+
+    </section>
+
+    <section id="description">
+
+      ${ data.content }
+
+      <p>The property is fully compliant with HMO requirements and has regular gas, electricity, appliance, and fire safety inspections.</p>
+
+    </section>
+
+    ${ data.prop.photo ? `
+
+      <section id="photos" class="photogrid imagexpand">
+
+        ${ data.prop.photo.map((i, ix) => `<img src="${ i.src }" width="${ i.width || 600 }" height="${ i.height || 600 }" alt="${ tacs.lib.feed.escape( data.prop.title ) } photograph ${ ix+1 }" class="${ i.height > i.width ? 'port' : 'land'}" loading="lazy">`).join('') }
+
+      </section>
+
+      ` : ''
+    }
+
+    ${ data.prop.videoID ? `<section id="video">
+      <youtube-lite video="${ data.prop.videoID }"></youtube-lite>
+    </section>` : '' }
+
+    ${ data.prop.plan ? `<section id="plan" class="imagexpand">
+      <img src="${ data.prop.plan.src }" width="${ data.prop.plan.width || 600 }" height="${ data.prop.plan.height || 600 }" alt="plan of ${ tacs.lib.feed.escape( data.prop.title ) }" loading="lazy">
+    </section>` : '' }
+
+    <section id="map">
+
+      <iframe src="https://maps.google.com/maps?q=${ data.prop.lat },${ data.prop.lng }&amp;hl=en&amp;z=15&amp;ie=UTF8&amp;output=embed" scrolling="no" marginheight="0" marginwidth="0" loading="lazy" width="100%" height="500px" frameborder="0"></iframe>
+
+    </section>
+
+  </div>
+
+  ${ data.prop.let ? `<p>This property has been let for ${ data.prop.year } and is no longer available.</p>` : `
+
+      <p><a href="__/apply/" data-email="info {at} exeter-student-lets dot co dot uk" class="button">Apply</a></p>
+
+      <p class="note">To reserve this property, students must pay a holding deposit of ${ tacs.lib.format.currency( data.prop.depositholding, 'GBP' ).replace('.00', '') } each. The remainder deposit of ${ tacs.lib.format.currency( data.prop.depositremainder, 'GBP' ).replace('.00', '') } each is payable when the contract is signed. Deposits are protected by <a href="https://www.mydeposits.co.uk/">MyDeposits</a>.</p>
+
+  ` }
 
 </main>
 

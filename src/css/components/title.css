@@ -4,15 +4,13 @@ main header {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-block-start: 1em;
 
   h1 {
     margin-block: 0 0.2em;
   }
 
   p {
-    margin-block: 0.2em;
-    margin-inline-end: 1em;
+    margin-block: 0 1em;
     color: var(--color-fore3);
   }
 
@@ -49,6 +47,23 @@ main header {
     font-size: 0.6em;
     padding-inline: 0.8em;
     vertical-align: 10%;
+  }
+
+}
+
+.proptag {
+
+  &:link, &:visited {
+    text-decoration: none;
+    padding-inline: 0.5em;
+    color: var(--color-fore2);
+    background-color: var(--color-back2);
+    border-radius: 20px;
+  }
+
+  &:hover, &:active, &:focus {
+    color: var(--color-back1);
+    background-color: var(--color-hint2);
   }
 
 }
