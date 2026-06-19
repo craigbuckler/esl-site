@@ -1,7 +1,7 @@
 /* photo handler */
 .photogrid {
   display: grid;
-  grid-auto-flow: row;
+  grid-auto-flow: dense;
   grid-template-columns: repeat( auto-fit, minmax(8em, 1fr));
   gap: 2px;
   margin: 0;
