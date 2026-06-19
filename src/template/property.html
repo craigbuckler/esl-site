@@ -20,6 +20,18 @@ ${ include('_partials/header.html') }
 
       <dl>
 
+        <dt><svg><use xlink:href="#svg-mappin"></use></svg> address</dt>
+        <dd class="full">${ data.title }</dd>
+
+        <dt><svg><use xlink:href="#svg-calendar"></use></svg> available from</dt>
+        <dd>${ tacs.lib.format.dateHuman( data.prop.datefrom ) }</dd>
+
+        <dt><svg><use xlink:href="#svg-calendar"></use></svg> available to</dt>
+        <dd>${ tacs.lib.format.dateHuman( data.prop.dateto ) }</dd>
+
+        <dt><svg><use xlink:href="#svg-calendar"></use></svg> contract term</dt>
+        <dd>${ tacs.lib.format.number( data.prop.weeks ) } weeks</dd>
+
         <dt><svg><use xlink:href="#svg-bed"></use></svg> bedrooms</dt>
         <dd>${ tacs.lib.format.number( data.prop.bedrooms ) }</dd>
 
@@ -30,31 +42,22 @@ ${ include('_partials/header.html') }
         <dd>${ tacs.lib.format.number( data.prop.receptions ) }</dd>
 
         <dt><svg><use xlink:href="#svg-walk"></use></svg> distance</dt>
-        <dd>${ tacs.lib.format.number( data.prop.unimins ) }-minute walk to University</dd>
+        <dd class="full">${ tacs.lib.format.number( data.prop.unimins ) }-minute walk to University</dd>
 
-        <dt>available from</dt>
-        <dd>${ tacs.lib.format.dateHuman( data.prop.datefrom ) }</dd>
+        <dt><svg><use xlink:href="#svg-utility"></use></svg> <abbr title="Energy Performance Certificate">EPC</abbr></dt>
+        <dd class="full">${ data.prop.epc }</dd>
 
-        <dt>to</dt>
-        <dd>${ tacs.lib.format.dateHuman( data.prop.dateto ) }</dd>
+        <dt><svg><use xlink:href="#svg-utility"></use></svg> utility bills</dt>
+        <dd class="full">not included</dd>
 
-        <dt>contract length</dt>
-        <dd>${ tacs.lib.format.number( data.prop.weeks ) } weeks</dd>
+        <dt><svg><use xlink:href="#svg-spanner"></use></svg> services</dt>
+        <dd class="full">communal areas and bedrooms are cleaned every week</dd>
 
-        <dt><abbr title="Energy Performance Certificate">EPC</abbr></dt>
-        <dd>${ data.prop.epc }</dd>
+        <dt><svg><use xlink:href="#svg-payment"></use></svg> total deposit</dt>
+        <dd class="full">${ tacs.lib.format.currency( data.prop.deposit, 'GBP' ).replace('.00', '') } per student</dd>
 
-        <dt>total deposit</dt>
-        <dd>${ tacs.lib.format.currency( data.prop.deposit, 'GBP' ).replace('.00', '') } per student</dd>
-
-        <dt class="charge">occupancy charge</dt>
-        <dd>${ tacs.lib.format.currency( data.prop.priceweek, 'GBP' ).replace('.00', '') } per student per week</dd>
-
-        <dt>utility bills</dt>
-        <dd>not included</dd>
-
-        <dt>services</dt>
-        <dd>communal areas and bedrooms are cleaned every week</dd>
+        <dt><svg><use xlink:href="#svg-payment"></use></svg> occupancy charge</dt>
+        <dd class="full charge">${ tacs.lib.format.currency( data.prop.priceweek, 'GBP' ).replace('.00', '') } per student per week</dd>
 
       </dl>
 
@@ -105,8 +108,8 @@ ${ include('_partials/header.html') }
 
 </main>
 
-${ include('_partials/meta.html') }
-
 ${ include('_partials/backnext.html') }
+
+${ include('_partials/meta.html') }
 
 ${ include('_partials/htmlfoot.html') }

@@ -1,8 +1,7 @@
 /* back/next navigation */
 .backnext {
 
-  margin-block-start: 4em;
-  margin-block-end: var(--layout-margin);
+  padding-block: 2em;
 
   ul {
     display: grid;

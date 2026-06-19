@@ -15,6 +15,9 @@ Your contact details are private and we are committed to protecting them. We pro
 * correct inaccurate information when alerted, and
 * delete your information at your request or once any contract is terminated.
 
+
+::: section
+
 ## GDPR
 
 In line with the General Data Protection Regulations (GDPR) effective from 25 May 2018, we are committed to protecting and respecting your privacy. This is a summary of our privacy notice to tell you what personal information about you we collect, hold and use. This notice is addressed to our occupants and guarantors including prospective and former occupants and guarantors. Please note that by issuing this notice we do not commit ourselves to giving you occupancy.
@@ -79,15 +82,15 @@ We retain information for 12 months if the occupancy does not proceed or for 7 y
 
 We require your information to check your suitability for an occupancy prior to entering an agreement.
 
-* For contractual performance so we can arrange the occupancy and enter into an agreement and guarantee with you.
+1. For contractual performance so we can arrange the occupancy and enter into an agreement and guarantee with you.
 
-* For contractual performance so we can manage your occupancy and the property including collecting fees and arranging repairs.
+1. For contractual performance so we can manage your occupancy and the property including collecting fees and arranging repairs.
 
-* In cases of an emergency.
+1. In cases of an emergency.
 
-* In our legitimate interests in relation to personal and background information to assess your suitability as an occupant or guarantor.
+1. In our legitimate interests in relation to personal and background information to assess your suitability as an occupant or guarantor.
 
-* To perform our legal obligations in relation immigration status checks, deposit protection, and other legal obligations about the occupancy.
+1. To perform our legal obligations in relation immigration status checks, deposit protection, and other legal obligations about the occupancy.
 
 Your occupancy application cannot proceed until all information is provided.
 
@@ -123,3 +126,5 @@ Cheshire<br>
 SK9 5AF
 
 [ico.org.uk](https://ico.org.uk/)
+
+::: /section

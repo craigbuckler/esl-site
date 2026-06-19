@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  font-style: normal;
   scrollbar-width: thin;
 }
 
@@ -44,6 +45,7 @@ svg {
   display: inline-block;
   inline-size: 1em;
   block-size: 1em;
+  vertical-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {

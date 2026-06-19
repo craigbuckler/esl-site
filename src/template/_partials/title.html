@@ -3,8 +3,6 @@
   ${ tacs.lib.nav.breadcrumb( tacs, data.link ) }
 
   <h1${ data?.prop ? ` data-property="${ data.prop.code }"` : ''}>${ data.title }</h1>
-  ${ data?.prop ? `<p>${ data?.tags?.sort( tacs.fn.sortBy('tag') ).map(t => `<a href="${ t.link }" class="proptag">${ t.tag }</a>`).join(' ') } ${ data.prop.let ? 'currently let' : 'available'} for ${ data.prop.year }</p>` : '' }
-
-  ${ include('_partials/share.html') }
+  ${ data?.prop ? `<p>${ data?.tags?.sort( tacs.fn.sortBy('tag') ).map(t => `<a href="${ t.link }" class="proptag">${ t.tag }</a>`).join(' ') } ${ data.prop.let ? 'currently let' : 'available'} in ${ data.prop.year } for ${ tacs.lib.format.currency( data.prop.priceweek, 'GBP' ).replace('.00', '') } per student per week</p>` : '' }
 
 </header>

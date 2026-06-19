@@ -15,12 +15,6 @@
     margin: 0;
   }
 
-  .taglist5 { font-size: var(--fsize-5); }
-  .taglist4 { font-size: var(--fsize-4); }
-  .taglist3 { font-size: var(--fsize-3); }
-  .taglist2 { font-size: var(--fsize-2); }
-  .taglist1 { font-size: var(--fsize-1); }
-
   a:link, a:visited {
     display: block;
     line-height: 1;
@@ -40,7 +34,7 @@
 
   sup {
     display: inline-block;
-    font-size: 0.5em;
+    font-size: 0.6em;
     min-inline-size: 1.5em;
     inline-size: fit-content;
     block-size: auto;

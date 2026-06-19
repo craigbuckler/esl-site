@@ -34,6 +34,45 @@ body > header {
 
   }
 
+  .share {
+    margin-inline-start: auto;
+    position: relative;
+
+    summary {
+
+      cursor: pointer;
+
+      &::marker {
+        content: '';
+      }
+
+      svg {
+        block-size: var(--header-height);
+      }
+    }
+
+    menu {
+      position: absolute;
+      inline-size: max-content;
+      max-block-size: calc(100vb - var(--header-height) - var(--layout-margin));
+      inset-block-start: 99%;
+      inset-inline-start: 0;
+      padding-block: 1rem;
+      background-color: var(--color-back2);
+      border-block-end: 4px solid var(--color-back2);
+      box-shadow: 0 3px 2px var(--color-shadow);
+      overflow-block: auto;
+      overscroll-behavior: contain;
+
+      li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+  }
+
 }
 
 .logo {
@@ -64,10 +103,6 @@ body > header {
     font-weight: 400;
   }
 
-}
-
-.contact {
-  margin-inline-start: auto;
 }
 
 static-search {

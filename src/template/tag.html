@@ -5,14 +5,15 @@ ${ include('_partials/header.html') }
 
   <header>
     ${ data?.pagination &&
-      `<h1>${ tacs.lib.format.number( data.childPageTotal ) } ${ data.title }${ data.pagination.pageTotal > 1 ? `, page ${ tacs.lib.format.number( data.pagination.pageCurrent1 ) } of ${ tacs.lib.format.number( data.pagination.pageTotal ) }` : ''}</h1>`
+      `<h1>${ data.title }${ data.pagination.pageTotal > 1 ? `, page ${ tacs.lib.format.number( data.pagination.pageCurrent1 ) } of ${ tacs.lib.format.number( data.pagination.pageTotal ) }` : ''}</h1>`
     }
+    <p>${ tacs.lib.format.number( data.childPageTotal ) } available</p>
   </header>
 
   ${ include('_partials/list.html') }
 
   <section>
-    <h2>Other property types</h2>
+    <h2>Property types</h2>
     ${ tacs.fn.nav.tagList() }
   </section>
 

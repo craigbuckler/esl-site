@@ -10,9 +10,9 @@
 @import url('./components/photogrid.css');
 @import url('./components/imagexpand.css');
 @import url('./components/nav-properties.css');
+@import url('./components/nav-taglist.css');
 @import url('./components/nav-backnext.css');
-
-@import url('./components/share.css');
+@import url('./components/footer.css');
 
 /*
 @import url('./core/details.css');
@@ -24,9 +24,9 @@
 @import url('./components/nav-heading.css');
 @import url('./components/nav-pagelist.css');
 @import url('./components/nav-pagination.css');
-@import url('./components/nav-taglist.css');
+@import url('./components/share.css');
 @import url('./components/meta.css');
-@import url('./components/footer.css');
+
 
 @import url('./core/print.css');
 */

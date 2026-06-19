@@ -1,5 +1,5 @@
 /* minimum size */
-main, body > header, .meta, .backnext {
+main, body > header, body > footer, .meta, .backnext {
 
   & > * {
     inline-size: var(--main-width);
@@ -9,5 +9,14 @@ main, body > header, .meta, .backnext {
 }
 
 main {
-  padding-block-start: calc( var(--header-fix-height) + 2ch );
+  padding-block: calc( var(--header-fix-height) + 2ch );
+}
+
+.meta {
+  padding-block: 3em;
+  background-color: var(--color-back4);
+
+  > section > :first-child {
+    margin-block-start: 0;
+  }
 }

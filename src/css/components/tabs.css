@@ -8,19 +8,18 @@
   }
 
   display: flex;
-  font-size: var(--fsize--1);
+  font-size: var(--fsize--2);
   padding-inline: 4px;
-  margin-block-start: 1.5em;
   border-block-end: 2px solid var(--color-back3);
 
   a:link, a:visited {
     display: block;
     font-weight: 400;
-    inline-size: auto;
+    inline-size: 4.6em;
     text-align: center;
     text-decoration: none;
-    padding-inline: 0.5em;
-    padding-block: 0.2em;
+    padding-inline: 0;
+    padding-block: 0.5em;
     margin-block-end: -2px;
     background-color: var(--color-back2);
     border: 2px solid var(--color-back3);
@@ -38,26 +37,25 @@
   }
 
   svg {
-    inline-size: 2.8em;
-    block-size: 2.8em;
-    vertical-align: center;
-  }
-
-  strong {
-    display: none;
+    display: block;
+    inline-size: 2.5em;
+    block-size: 2.5em;
+    margin-inline: auto;
   }
 
   @media (width > 38rem) {
 
+    font-size: var(--fsize--1);
+
     a:link, a:visited {
       inline-size: 6em;
-      padding-block: 0.4em;
-      padding-inline: 0;
     }
 
     svg {
+      display: inline-block;
       inline-size: 1.2em;
       block-size: 1.2em;
+      vertical-align: center;
     }
 
     strong {
@@ -69,10 +67,12 @@
 
 .tabs {
 
+  margin-block: 2em;
+
   section {
-    block-size: 70vb;
-    scroll-margin-block-start: max(calc(var(--header-fix-height) + 2em), 25vb);
-    overflow-block: auto;
+    padding: 0;
+    margin: 0;
+    scroll-margin-block-start: calc(var(--header-fix-height) + 5rem);
   }
 
   section:not(:target) {
@@ -102,13 +102,22 @@
 
 }
 
-#video youtube-lite, #plan img, #map iframe {
-  block-size: 100%;
-  inline-size: 100%;
-  margin-block: 0;
-  margin-inline: auto;
+/* fixed height tabs */
+#video, #map {
+
+  block-size: 70vb;
+
+  iframe, youtube-lite {
+    inline-size: 100%;
+    block-size: 100%;
+    margin-block: 0;
+    margin-inline: auto;
+  }
+
 }
 
-#plan img {
-  inline-size: auto;
+/* charge */
+.charge {
+  font-size: var(--fsize-2);
+  color: var(--color-fore3);
 }
