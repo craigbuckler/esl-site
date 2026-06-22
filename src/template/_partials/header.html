@@ -5,28 +5,16 @@
     <span><strong>EXETER</strong> <em>STUDENT LETS</em></span>
   </a></p>
 
-  ${ include('_partials/share.html') }
+  <p class="call"><a href="tel:+44-7740-309-077" title="call us"><svg><use xlink:href="#svg-phone"></use></svg></a></p>
 
-  <p class="contact"><a href="tel:+44-7740-309-077" title="call us"><svg><use xlink:href="#svg-phone"></use></svg></a></p>
-
-  <p><a href="__/apply/" data-email="info {at} exeter-student-lets dot co dot uk" title="email us"><svg><use xlink:href="#svg-email"></use></svg></a></p>
+  <p class="email"><a href="__/apply/" data-email="info {at} exeter-student-lets dot co dot uk" title="email us"><svg><use xlink:href="#svg-email"></use></svg></a></p>
 
   <static-search label="search" title="search Ctrl+K">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
   </static-search>
 
-  <form class="themeswitcher">
-    <input type="radio" name="themeswitcher" id="themeswitcher_auto" value="" checked>
+  ${ include('_partials/share.html') }
 
-    <label for="themeswitcher_light" title="system theme"><svg><use xlink:href="#svg-pc"></use></svg><span>system theme</span></label>
-
-    <input type="radio" name="themeswitcher" id="themeswitcher_light" value="light">
-
-    <label for="themeswitcher_dark" title="light theme"><svg><use xlink:href="#svg-sun"></use></svg><span>light theme</span></label>
-
-    <input type="radio" name="themeswitcher" id="themeswitcher_dark" value="dark">
-
-    <label for="themeswitcher_auto" title="dark theme"><svg><use xlink:href="#svg-moon"></use></svg><span>dark theme</span></label>
-  </form>
+  ${ include('_partials/menu.html') }
 
 </div></header>

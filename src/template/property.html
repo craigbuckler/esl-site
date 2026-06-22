@@ -100,9 +100,9 @@ ${ include('_partials/header.html') }
 
   ${ data.prop.let ? `<p>This property has been let for ${ data.prop.year } and is no longer available.</p>` : `
 
-      <p><a href="__/apply/" data-email="info {at} exeter-student-lets dot co dot uk" class="button">VIEW PROPERTY</a></p>
+    <p><a href="__/apply/" data-email="info {at} exeter-student-lets dot co dot uk" class="button">VIEW PROPERTY</a></p>
 
-      <p class="note">To reserve this property, students must pay a holding deposit of ${ tacs.lib.format.currency( data.prop.depositholding, 'GBP' ).replace('.00', '') } each. The remainder deposit of ${ tacs.lib.format.currency( data.prop.depositremainder, 'GBP' ).replace('.00', '') } each is payable when the contract is signed. Deposits are protected by <a href="https://www.mydeposits.co.uk/">MyDeposits</a>.</p>
+    <p class="note">To reserve this property, students must pay a holding deposit of ${ tacs.lib.format.currency( data.prop.depositholding, 'GBP' ).replace('.00', '') } each. The remainder deposit of ${ tacs.lib.format.currency( data.prop.depositremainder, 'GBP' ).replace('.00', '') } each is payable when the contract is signed. Deposits are protected by <a href="https://www.mydeposits.co.uk/">MyDeposits</a>.</p>
 
   ` }
 

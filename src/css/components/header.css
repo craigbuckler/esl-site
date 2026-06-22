@@ -3,7 +3,7 @@ body > header {
   position: fixed;
   inset-block-start: 0;
   inline-size: 100%;
-  background-color: var(--color-back2);
+  background-color: color-mix(in oklab, var(--color-back1), transparent 10%);
   z-index: 1;
 
   & > div {
@@ -15,12 +15,11 @@ body > header {
   }
 
   svg {
-    inline-size: 2em;
-    block-size: 2em;
-    vertical-align: middle;
+    inline-size: 1.8em;
+    block-size: 1.8em;
   }
 
-  a, button, label {
+  a, button, summary, label, static-search {
 
     &, &:link, &:visited {
       text-decoration: none;
@@ -32,10 +31,21 @@ body > header {
       background-color: transparent;
     }
 
+    &:focus-visible {
+      outline: 0 none;
+    }
+
   }
 
-  .share {
+  p {
+    margin-block: auto;
+  }
+
+  .call {
     margin-inline-start: auto;
+  }
+
+  details {
     position: relative;
 
     summary {
@@ -54,13 +64,11 @@ body > header {
     menu {
       position: absolute;
       inline-size: max-content;
-      max-block-size: calc(100vb - var(--header-height) - var(--layout-margin));
-      inset-block-start: 99%;
-      inset-inline-start: 0;
-      padding-block: 1rem;
-      background-color: var(--color-back2);
-      border-block-end: 4px solid var(--color-back2);
-      box-shadow: 0 3px 2px var(--color-shadow);
+      max-block-size: calc(98vb - var(--header-height));
+      inset-block-start: 100%;
+      inset-inline-end: 0;
+      padding-block: 0.5em;
+      background-color: color-mix(in oklab, var(--color-back1), transparent 10%);
       overflow-block: auto;
       overscroll-behavior: contain;
 
@@ -69,6 +77,25 @@ body > header {
         margin: 0;
         padding: 0;
       }
+
+      a, strong {
+        display: block;
+        padding-inline: 1em;
+        padding-block: 0.3em;
+      }
+
+      svg {
+        inline-size: 1.2em;
+        block-size: 1.2em;
+      }
+
+      hr {
+        inline-size: calc(100% - 2em);
+        margin-block: 0.5em;
+        margin-inline: auto;
+        background-color: var(--color-back3);
+      }
+
     }
 
   }
@@ -81,8 +108,8 @@ body > header {
   margin: 0;
 
   svg {
-    inline-size: 3.8em;
-    block-size: 3.8em;
+    inline-size: 3.2em;
+    block-size: 3.2em;
   }
 
   svg, span {
@@ -103,36 +130,45 @@ body > header {
     font-weight: 400;
   }
 
+  span {
+    display: none;
+
+    @media (width > 28rem) {
+      display: inline-block;
+    }
+  }
+
 }
 
 static-search {
 
-  inline-size: 2em;
-  align-content: center;
-  padding-block-start: 0.3em;
+  display: block;
+  visibility: hidden;
+  inline-size: 1.8em;
+  margin-block: auto;
   margin-inline-start: auto;
+  pointer-events: none;
 
   &::part(activate) {
+    inline-size: 100%;
     outline: 0 none;
     stroke-linecap: round;
     stroke: currentColor;
     stroke-width: 2;
+    color: inherit;
     fill: none;
   }
 
 }
 
-static-search:not(:defined) + .themeswitcher {
-  margin-inline-start: auto;
+static-search:defined {
+  visibility: visible;
+  pointer-events: all;
 }
 
 .themeswitcher {
 
-  position: relative;
-  inline-size: 1.6em;
-  align-content: center;
-
-  input, span {
+  input {
     position: absolute;
     clip: rect(0 0 0 0);
     inline-size: 1px;
@@ -141,23 +177,17 @@ static-search:not(:defined) + .themeswitcher {
   }
 
   label {
-    position: absolute;
-    inset-block-start: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
+    display: none;
+    padding-inline: 1em;
+    padding-block: 0.3em;
     cursor: pointer;
     pointer-events: none;
     transition: opacity 0.3s linear;
   }
 
   input:checked + label {
-    opacity: 1;
+    display: block;
     pointer-events: all;
-  }
-
-  svg {
-    inline-size: 2em;
-    block-size: 60%;
   }
 
   svg:hover, svg:focus, svg:active {
@@ -165,10 +195,7 @@ static-search:not(:defined) + .themeswitcher {
   }
 
   &:focus-within:has(:focus-visible) label {
-    outline-color: color-mix(in srgb, var(--color-hint1) 50%, transparent);
-    outline-style: solid;
-    outline-offset: 0.2em;
-    outline-width: 0.2rem;
+    color: var(--color-hint1);
   }
 
 }

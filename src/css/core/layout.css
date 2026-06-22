@@ -1,7 +1,7 @@
 /* minimum size */
-main, body > header, body > footer, .meta, .backnext {
+main, body > header, body > footer, .full, .meta, .backnext {
 
-  & > * {
+  & > *:not(.full) {
     inline-size: var(--main-width);
     margin-inline: auto;
   }
@@ -9,7 +9,7 @@ main, body > header, body > footer, .meta, .backnext {
 }
 
 main {
-  padding-block: calc( var(--header-fix-height) + 2ch );
+  padding-block-end: calc( var(--header-fix-height) + 2ch );
 }
 
 .meta {

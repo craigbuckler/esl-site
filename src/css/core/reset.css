@@ -45,6 +45,7 @@ svg {
   display: inline-block;
   inline-size: 1em;
   block-size: 1em;
+  vertical-align: middle;
   vertical-align: center;
 }
 

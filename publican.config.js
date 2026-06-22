@@ -106,6 +106,8 @@ for (let idx = 0; idx < property?.length || 0; idx++) {
   p.plan = await imageInfo( `media/plan/${ p.code }-plan.webp`, './src/', publican.config.root );
   p.photo = await allImageInfo( `media/photo/${ p.code }`, './src/', publican.config.root );
 
+  console.log(p.photo[0]);
+
   // add property page
   publican.addContent(
     `${ p.type }/${ normalize(`${ p.occupants }-bed-${ p.street }-exeter-${ p.postcode }`) }.md`,
@@ -115,6 +117,7 @@ for (let idx = 0; idx < property?.length || 0; idx++) {
       menu: p.street,
       description: `${ p.bedrooms }-bed student ${ p.type } in Exeter, ${ p.let ? `currently let for ${ p.code }` : `available from ${ tacs.lib.format.dateHuman(p.datefrom) } for ${ tacs.lib.format.currency(p.priceweek, 'GBP') } per student per week.` }.`,
       prop: p,
+      hero: p.photo[0].src,
       index: 'weekly',
       template: 'property.html',
       tags: [ p.type, `${ p.bedrooms }-bed` ],

@@ -54,7 +54,7 @@
   --staticsearch-fontsize: var(--fsize-0);
 
   --staticsearch-color-back: var(--color-back2);
-  --staticsearch-color-border: var(--color-back3);
+  --staticsearch-color-border: var(--color-back1);
 
   --staticsearch-color-fore0: var(--color-fore1);
   --staticsearch-color-fore1: var(--color-fore2);

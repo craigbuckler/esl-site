@@ -5,31 +5,9 @@ description: Student properties in Exeter, Devon.
 priority: 1.0
 ---
 
-We are now accepting student occupancy applications for Exeter [houses](__/house/) and [flats](__/flat/) from August 2027. Please [contact us](__/apply/) for viewings.
+We are now accepting student occupancy applications for Exeter [houses](__/house/) and [flats](__/flat/) from August 2027. Find out about [our accommodation services](__/about/) or [contact us to arrange a viewing](__/apply/).
 
 ${ tacs.fn.nav.propertyList() }
-
-::: section
-
-## Our properties
-
-We specialise in affordable, quality, fully-furnished student [houses](__/house/) and [flats](__/flat/) for student accommodation in prime locations close to the main Exeter University Streatham campus, St Luke's College, and the Royal Devon &amp; Exeter Hospital.
-
-* **No agency fees!**
-
-* Light, spacious, and decorated to a high standard.
-
-* Modern fitted kitchens and attractive, stylish furniture.
-
-* Fully compliant with HMO regulations.
-
-* Regular gas, electricity, appliance, and fire safety inspections.
-
-* An easy-to-use [online welcome pack and help guide](https://help.exeter-student-lets.co.uk/).
-
-* Available to groups of students.
-
-Our friendly, professional, and prompt accommodation service provides a rapid response to all queries. We maintain regular contact with our occupants and quickly rectify problems.
 
 <blockquote>
 
@@ -39,6 +17,4 @@ Our friendly, professional, and prompt accommodation service provides a rapid re
 
 </blockquote>
 
-[View more testimonials from Exeter students...](__/testimonials/)
-
-::: /section
+[More Exeter student testimonials...](__/testimonials/)
