@@ -16,7 +16,7 @@
     font-size: 10px !important;
   }
 
-  header, footer, nav-heading, video, audio, youtube-lite, .menudir, .breadcrumb, .wordcount, .headlink, .posttags, .backnext, .related, .meta, .pagination, .share, .button {
+  body > header, footer, nav-heading, video, youtube-lite, blockquote::after, .breadcrumb, .tabset, .backnext, .related, .meta, .button, #top {
     display: none !important;
   }
 
@@ -32,68 +32,63 @@
   h3 { font-size: 14px !important; }
 
   main {
-    column-width: 24em;
-    column-gap: 4em;
     padding-block: 0 !important;
+    column-width: 24em;
+    column-gap: 3em;
 
-    header {
-      display: block !important
-    }
-  }
+    header.full {
 
-  th {
-    font-weight: bold;
-  }
+      position: static;
+      inline-size: auto;
+      block-size: auto;
 
-  aside, blockquote {
-    padding-inline-start: 1em !important;
-  }
-
-  .filename {
-
-    margin-block-start: 0.5em;
-    margin-block-end: 0;
-
-    dfn {
-      min-inline-size: none !important;
-      font-size: 12px !important;
-      padding: 0 !important;
-      border: 0 none;
-
-      &::before {
-        display: none !important;
+      div {
+        transform: none;
       }
+
+      img { display: none; }
+    }
+
+    header, header > * {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  }
+
+  .properties {
+    column-span: all;
+  }
+
+  .tabs {
+
+    margin: 0;
+
+    section:is(#overview, #description, #photos, #plan) {
+      display: block;
     }
 
   }
 
-  pre, code {
-    font-size: 12px !important;
-    white-space: pre-wrap !important;
-    word-break: break-all !important;
+  #plan img {
+    block-size: 500px !important;
+    inline-size: auto !important;
   }
 
-  h1, h2, h3 {
-    code {
-      font-size: inherit !important;
-    }
-  }
+  .photogrid {
 
-  code {
-    padding: 0 !important;
-    border: 0 none !important;
-  }
-
-  pre {
-    padding-inline: 0.5em !important;
-    padding-block: 4px !important;
     margin-block: 1em !important;
-    border: 1px solid #888;
-    border-radius: 3px !important;
+
+    img {
+      display: inline-block;
+      inline-size: auto !important;
+      block-size: 120px !important;
+      margin: 0 0 1px 1px;
+    }
+
   }
 
-  .filename + pre[class*="language-"] {
-    margin-block-start: 0.2em !important;
+  a.proptag {
+    padding: 0 !important;
   }
 
   a:link, a:visited {
@@ -104,19 +99,7 @@
     color: #000 !important;
   }
 
-  nav.pagelist {
-
-    grid-template-columns: 1fr !important;
-
-    a:link, a:visited {
-      padding: 0;
-      border: 0;
-      border-radius: 0;
-    }
-
-  }
-
-  article, section, aside, blockquote, table, img, picture, figure, svg, li, pre {
+  article, aside, blockquote, table, img, picture, figure, svg, li, pre {
     break-inside: avoid;
   }
 
@@ -128,6 +111,15 @@
     content: " (" attr(href) ")";
     font-size: 12px !important;
     font-style: italic;
+  }
+
+  .print {
+    display: block;
+    text-align: center;
+
+    strong {
+      display: block;
+    }
   }
 
 }

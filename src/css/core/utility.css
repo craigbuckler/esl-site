@@ -15,12 +15,22 @@
   font-size: var(--fsize-3);
 }
 
+.f-1, .note { font-size: var(--fsize--1); }
+.f2 { font-size: var(--fsize-2); }
+.f3 { font-size: var(--fsize-3); }
+
 .center {
+  display: block;
   text-align: center;
 }
 
 .right {
+  display: block;
   text-align: end;
+}
+
+.highlight {
+  color: var(--color-hint2);
 }
 
 .flexcenter {
@@ -39,4 +49,23 @@
     margin: 0;
   }
 
+}
+
+ul.quotes {
+  list-style-type: none;
+
+  li {
+    margin: 0;
+    margin-block-start: 1em;
+    margin-inline-end: 2em;
+  }
+
+  li:nth-of-type(2n) {
+    margin-inline-start: 2em;
+    margin-inline-end: 0;
+  }
+}
+
+.print {
+  display: none;
 }

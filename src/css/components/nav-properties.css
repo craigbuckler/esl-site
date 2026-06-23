@@ -13,7 +13,7 @@ nav.properties {
     display: grid;
     grid-auto-flow: row;
     grid-template-columns: repeat( auto-fit, minmax(12em, 1fr));
-    gap: 1em;
+    gap: 2em 1em;
   }
 
   a:link, a:visited {
@@ -21,22 +21,33 @@ nav.properties {
     display: block;
     block-size: 100%;
     text-decoration: none;
-    padding-block-end: 1.8em;
-    background-color: var(--color-back2);
-    border: 1px solid var(--color-back2);
-    border-radius: var(--border-radius1);
+    padding-block-end: 2em;
+    color: var(--color-fore2);
+    background-color: var(--color-back1);
+    border-radius: var(--border-radius2);
     overflow: hidden;
   }
 
   a:hover, a:active, a:focus {
-    background-color: var(--color-back3);
-    border-color: var(--color-hint1);
+    background-color: var(--color-back2);
+
+    img {
+      scale: 1.2;
+    }
+  }
+
+  figure {
+    inline-size: 100%;
+    block-size: 10em;
+    margin: 0;
+    overflow: hidden;
   }
 
   img {
     inline-size: 100%;
-    block-size: 10em;
+    block-size: 100%;
     object-fit: cover;
+    transition: scale 1s ease-out;
   }
 
   ul, h2, h3, p {
@@ -67,9 +78,12 @@ nav.properties {
   p.price {
     position: absolute;
     inset: auto 0 0 0;
-    font-weight: 400;
+    font-weight: 500;
     text-align: center;
-    color: var(--color-hint2);
+    padding-block: 0.2em;
+    margin: 0;
+    color: var(--color-back1);
+    background-color: var(--color-hint2);
   }
 
   p.let {

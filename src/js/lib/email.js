@@ -3,7 +3,7 @@ Array.from( document.querySelectorAll('[data-email]') ).forEach(e => {
 
   const
     ds = e.dataset.email,
-    em = (ds || e.textContent),
+    em = (ds || e.lastChild.textContent),
     es = em.replace(/\sdot\s/ig, '.').replace(/\{at\}/ig, '@').replace(/\s/g, ''),
     prop = document.querySelector('[data-property]');
 
@@ -25,7 +25,7 @@ Array.from( document.querySelectorAll('[data-email]') ).forEach(e => {
 
   if (em !== es) {
     e.closest('a').href = 'ma' + 'ilt' + 'o:' + es + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    if (!ds) e.textContent = es;
+    if (!ds) e.lastChild.textContent = es;
   }
 
 });

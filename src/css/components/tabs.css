@@ -69,7 +69,7 @@
   margin-block: 2em;
 
   section {
-    padding: 0;
+    padding: 2px 0 0 0;
     margin: 0;
     scroll-margin-block-start: calc(var(--header-fix-height) + 5rem);
   }
@@ -85,6 +85,10 @@
       display: block;
     }
 
+  }
+
+  img {
+    margin-inline: auto;
   }
 
   &:not(:has(:target)) .tabset a[href="#overview"],

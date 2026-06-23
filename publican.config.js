@@ -78,10 +78,24 @@ tacs.lib.format.setLocale( tacs.config.language );
 publican.config.processRenderStart.delete( renderstartData );
 publican.config.processRenderStart.add( renderstartTag );
 
+// handle hero images
+const hero = await allImageInfo( 'media/hero', './src/', publican.config.root );
+let heroItem = 0;
+
+publican.config.processPreRender.add( data => {
+
+  if (!data.hero) {
+    data.hero = hero[ heroItem ];
+    if (!data.template) heroItem = (++heroItem % hero.length);
+  }
+
+});
+
 // define custom functions
 tacs.fn = tacs.fn || {};
 tacs.fn.nav = nav;
 tacs.fn.sortBy = sortBy;
+tacs.fn.dateFull = d => new Intl.DateTimeFormat(tacs.config.language, { dateStyle: 'full' }).format( new Date(d) );
 
 // create virtual content
 for (let idx = 0; idx < property?.length || 0; idx++) {
@@ -106,8 +120,6 @@ for (let idx = 0; idx < property?.length || 0; idx++) {
   p.plan = await imageInfo( `media/plan/${ p.code }-plan.webp`, './src/', publican.config.root );
   p.photo = await allImageInfo( `media/photo/${ p.code }`, './src/', publican.config.root );
 
-  console.log(p.photo[0]);
-
   // add property page
   publican.addContent(
     `${ p.type }/${ normalize(`${ p.occupants }-bed-${ p.street }-exeter-${ p.postcode }`) }.md`,
@@ -117,7 +129,7 @@ for (let idx = 0; idx < property?.length || 0; idx++) {
       menu: p.street,
       description: `${ p.bedrooms }-bed student ${ p.type } in Exeter, ${ p.let ? `currently let for ${ p.code }` : `available from ${ tacs.lib.format.dateHuman(p.datefrom) } for ${ tacs.lib.format.currency(p.priceweek, 'GBP') } per student per week.` }.`,
       prop: p,
-      hero: p.photo[0].src,
+      hero: p.photo.filter(i => i.width > i.height).at(0) || p.photo?.[0],
       index: 'weekly',
       template: 'property.html',
       tags: [ p.type, `${ p.bedrooms }-bed` ],

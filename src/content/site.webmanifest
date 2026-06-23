@@ -4,7 +4,7 @@
   "name"              : "${ tacs.config.title }",
   "short_name"        : "${ tacs.config.title }",
   "description"       : "${ tacs.config.description }",
-  "categories"        : [ "Publican", "static", "site", "generator" ],
+  "categories"        : [ "Exeter", "student", "lets", "accommodation", "housing", "rent" ],
   "scope"             : "${ tacs.root }",
   "start_url"         : "${ tacs.root }",
   "display"           : "minimal-ui",
@@ -12,7 +12,7 @@
   "theme_color"       : "${ tacs.config.themeColor }",
   "background_color"  : "${ tacs.config.themeColor }",
   "icons": [
-    { "src": "${ tacs.root }favicon192.png", "type": "image/png", "sizes": "192x192" },
-    { "src": "${ tacs.root }favicon512.png", "type": "image/png", "sizes": "512x512" }
+    { "src": "${ tacs.root }media/favicons/favicon192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "${ tacs.root }media/favicons/favicon512.png", "type": "image/png", "sizes": "512x512" }
   ]
 }

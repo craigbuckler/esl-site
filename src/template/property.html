@@ -23,11 +23,11 @@ ${ include('_partials/header.html') }
         <dt><svg><use xlink:href="#svg-mappin"></use></svg> address</dt>
         <dd class="full">${ data.title }</dd>
 
-        <dt><svg><use xlink:href="#svg-calendar"></use></svg> available from</dt>
-        <dd>${ tacs.lib.format.dateHuman( data.prop.datefrom ) }</dd>
+        <dt><svg><use xlink:href="#svg-calendar"></use></svg> move-in date</dt>
+        <dd class="full">${ tacs.fn.dateFull( data.prop.datefrom ) }</dd>
 
-        <dt><svg><use xlink:href="#svg-calendar"></use></svg> available to</dt>
-        <dd>${ tacs.lib.format.dateHuman( data.prop.dateto ) }</dd>
+        <dt><svg><use xlink:href="#svg-calendar"></use></svg> move-out date</dt>
+        <dd class="full">${ tacs.fn.dateFull( data.prop.dateto ) }</dd>
 
         <dt><svg><use xlink:href="#svg-calendar"></use></svg> contract term</dt>
         <dd>${ tacs.lib.format.number( data.prop.weeks ) } weeks</dd>
@@ -98,7 +98,7 @@ ${ include('_partials/header.html') }
 
   </div>
 
-  ${ data.prop.let ? `<p>This property has been let for ${ data.prop.year } and is no longer available.</p>` : `
+  ${ data.prop.let ? `<p class="center highlight"><strong>This property has been let for ${ data.prop.year } and is no longer available.</strong></p>` : `
 
     <p><a href="__/apply/" data-email="info {at} exeter-student-lets dot co dot uk" class="button">VIEW PROPERTY</a></p>
 

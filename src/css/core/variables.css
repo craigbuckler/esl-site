@@ -49,6 +49,7 @@
   --color-hint2: light-dark(oklch(0.26 0.13 54.76), oklch(0.53 0.13 54.76));
 
   --border-radius1: 5px;
+  --border-radius2: 10px;
 
   /* static-search styles */
   --staticsearch-fontsize: var(--fsize-0);

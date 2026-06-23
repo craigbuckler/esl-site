@@ -4,11 +4,11 @@ main > header {
   padding-block-start: calc( var(--header-fix-height) + 2ch );
 
   &.full {
-    position: relative;
     inline-size: 100%;
     block-size: min(50vb, 50rem);
     padding-block-start: 0;
     margin-block-end: 4em;
+    overflow: hidden;
 
     div {
       padding: 0.6em 1em;
@@ -35,17 +35,25 @@ main > header {
   }
 
   p {
+    font-weight: 300;
     margin-block: 0 1em;
-    color: var(--color-fore3);
+    color: var(--color-fore2);
   }
 
 }
 
+/* blur property image */
+main[id] header.full img {
+  scale: 1.05;
+  filter: blur(6px);
+}
+
+/* breadcrumb */
 .breadcrumb {
 
-  font-size: var(--fsize--2);
+  font-size: var(--fsize--1);
   inline-size: 100%;
-  color: var(--color-fore4);
+  color: var(--color-fore3);
 
   ol, li, a {
     text-decoration: none;
@@ -62,7 +70,7 @@ main > header {
     align-items: center;
   }
 
-  li::after {
+  li:after {
     display: inline;
     content: '\25b6';
     font-size: 0.6em;
@@ -70,11 +78,21 @@ main > header {
     vertical-align: 10%;
   }
 
+  a:link, a:visited {
+    color: var(--color-fore2);
+  }
+
+  a:hover, a:active, a:focus {
+    color: var(--color-hint1);
+  }
+
 }
 
+/* tag pill */
 .proptag {
 
   &:link, &:visited {
+    font-weight: 400;
     text-decoration: none;
     padding-inline: 0.5em;
     color: var(--color-fore2);

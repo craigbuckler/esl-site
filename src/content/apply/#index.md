@@ -3,14 +3,13 @@ title: Apply for occupancy
 menu: Apply
 description: How to contact us to arrange a viewing of a student property in Exeter.
 priority: 0.9
-hero: media/hero/exeter-canal2.avif
 ---
 
-To arrange a viewing, please contact:
+To arrange a student property viewing, please contact:
 
-<p class="center f3 bold"><a href="tel:+44-7740-309077" class="nodec">07740 309 077</a></p>
+<p class="center f2 wb"><a href="tel:+44-7740-309077" class="nodec"><svg><use xlink:href="#svg-phone"></use></svg> +44 (0) 7740 309 077</a></p>
 
-<p class="center bold"><a href="#" data-email="" class="nodec">info {at} exeter-student-lets dot co dot uk</a></p>
+<p class="center wb"><a href="#" data-email="" class="nodec"><svg><use xlink:href="#svg-email"></use></svg> <span>info {at} exeter-student-lets dot co dot uk</span></a></p>
 
 Please provide:
 

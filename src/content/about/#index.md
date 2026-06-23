@@ -3,12 +3,11 @@ title: About Exeter Student Lets
 menu: About
 description: More information about Exeter Student Lets accommodation service.
 priority: 0.8
-hero: media/hero/exeter-canal1.avif
 ---
 
 Hello.
 
-We are George and Esther and have been serving students in Exeter since 1997.
+We are George and Esther and have been helping Exeter students with accommodation services since 1997.
 
 We specialise in affordable, quality, fully-furnished student [flats](__/flat/) and [houses](__/house/) in prime locations close to the main Exeter University Streatham campus, St Luke's College, and the Royal Devon &amp; Exeter Hospital.
 
