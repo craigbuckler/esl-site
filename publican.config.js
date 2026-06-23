@@ -127,13 +127,13 @@ for (let idx = 0; idx < property?.length || 0; idx++) {
     {
       title: p.title,
       menu: p.street,
-      description: `${ p.bedrooms }-bed student ${ p.type } in Exeter, ${ p.let ? `currently let for ${ p.code }` : `available from ${ tacs.lib.format.dateHuman(p.datefrom) } for ${ tacs.lib.format.currency(p.priceweek, 'GBP') } per student per week.` }.`,
+      description: `${ p.bedrooms }-bed student ${ p.type } in Exeter, ${ p.let ? `currently let for ${ p.code }` : `available from ${ tacs.lib.format.dateHuman(p.datefrom) } for ${ tacs.lib.format.currency(p.priceweek, 'GBP') } per student per week` }.`,
       prop: p,
       hero: p.photo.filter(i => i.width > i.height).at(0) || p.photo?.[0],
       index: 'weekly',
       template: 'property.html',
       tags: [ p.type, `${ p.bedrooms }-bed` ],
-      priority: 1 - (idx / 100),
+      priority: 1 - ((idx + 1) / 100),
     }
   );
 

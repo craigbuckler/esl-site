@@ -12,7 +12,7 @@ main > header {
 
     div {
       padding: 0.6em 1em;
-      background-color: color-mix(in oklab, var(--color-back1), transparent 50%);
+      background-color: color-mix(in oklab, var(--color-back1), transparent 25%);
       backdrop-filter: blur(10px);
       transform: translateY(calc( -100% - 1em ));
 

@@ -95,6 +95,7 @@ blockquote {
     font-weight: 400;
     text-align: end;
     margin-block-start: 0.5em;
+    color: var(--color-fore4);
   }
 
   &::after {
