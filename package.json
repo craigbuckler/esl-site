@@ -23,7 +23,7 @@
     "start": "[ ! -f .env ] || export $(grep -v '^#' .env | xargs) && node --env-file=.env.dev ./publican.config.js"
   },
   "dependencies": {
-    "esbuild": "0.28.0",
+    "esbuild": "0.28.1",
     "image-meta": "0.2.2",
     "publican": "0.12.1",
     "publican.lib": "0.1.2",

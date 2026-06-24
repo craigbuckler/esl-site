@@ -25,7 +25,7 @@
 
   strong {
     font-size: var(--fsize--1);
-    font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-bold);
     line-height: 1.2;
     color: var(--color-hint1);
   }
@@ -39,10 +39,10 @@
   }
 
   a:hover, a:active, a:focus {
-    border-color: var(--color-hint1);
+    border-color: var(--color-hint2);
 
     strong {
-      color: var(--color-fore1);
+      color: var(--color-hint2);
     }
   }
 

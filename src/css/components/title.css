@@ -28,6 +28,11 @@ main > header {
     block-size: 100%;
     margin: 0;
     object-fit: cover;
+    object-position: 50%;
+
+    &[src*="student"] {
+      object-position: 50% 0%;
+    }
   }
 
   h1 {
@@ -96,7 +101,7 @@ main[id] header.full img {
     text-decoration: none;
     padding-inline: 0.5em;
     color: var(--color-fore2);
-    background-color: var(--color-back2);
+    background-color: var(--color-back1);
     border-radius: 20px;
   }
 

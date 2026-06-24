@@ -116,7 +116,7 @@ for (let idx = 0; idx < property?.length || 0; idx++) {
   p.deposit = +period.depositholding + period.depositremainder;
   p.priceweek = period.priceweek;
   p.weeks = Math.round( ( new Date(period.dateto) - new Date(period.datefrom) ) / (1000 * 60 * 60 * 24 * 7) );
-  p.let = period.let;
+  p.let = period.let; // Math.random() > 0.5;
   p.plan = await imageInfo( `media/plan/${ p.code }-plan.webp`, './src/', publican.config.root );
   p.photo = await allImageInfo( `media/photo/${ p.code }`, './src/', publican.config.root );
 

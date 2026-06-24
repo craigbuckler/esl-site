@@ -50,7 +50,7 @@ li {
 
 dl {
   display: grid;
-  grid-template-columns: 10em 1fr;
+  grid-template-columns: 7em 1fr;
   margin-block: 1em;
 
   dt, dd {

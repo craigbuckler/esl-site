@@ -4,7 +4,7 @@
  */
 {
   "name": "esl-site",
-  "compatibility_date": "2026-06-04",
+  "compatibility_date": "2026-06-24",
   "workers_dev": true,
   "build": {
     "command": "npm run build"
