@@ -1,12 +1,12 @@
 <header class="full">
 
-  <img src="${ data.hero.src }" width="${ data.hero.width }" height="${ data.hero.height }" alt="Exeter view" class="full" loading="eager">
+  <img id="propimage-${ data?.prop ? data.prop.code : 'title' }" src="${ data.hero.src }" width="${ data.hero.width }" height="${ data.hero.height }" alt="Exeter view" class="full" loading="eager">
 
   <div>
 
     ${ tacs.lib.nav.breadcrumb( tacs, data.link ) }
 
-    <h1${ data?.prop ? ` data-property="${ data.prop.code }"` : ''}>${ data?.prop ? data.prop.street : data.title }</h1>
+    <h1${ data?.prop ? ` id="proptitle-${ data.prop.code }" data-property="${ data.prop.code }"` : ''}>${ data?.prop ? data.prop.street : data.title }</h1>
 
     ${ data?.prop ? `<p>${ data?.tags?.sort( tacs.fn.sortBy('tag') ).map(t => `<a href="${ t.link }" class="proptag">${ t.tag }</a>`).join(' ') } ${ data.prop.let ?
         `already let for ${ data.prop.year }` :

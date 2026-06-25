@@ -15,9 +15,8 @@
   text-rendering: optimizeSpeed;
   image-rendering: -webkit-optimize-contrast;
   interpolate-size: allow-keywords;
+  transition-behavior: allow-discrete;
 }
-
-@view-transition { navigation: auto; }
 
 html {
   writing-mode: horizontal-tb;
@@ -117,6 +116,13 @@ table, th, td {
 
 label {
   user-select: none;
+}
+
+/* enable view transitions */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
 }
 
 /* disable animations */

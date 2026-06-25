@@ -1,12 +1,13 @@
 body > header {
 
-  position: fixed;
+  position: relative;
   inset-block-start: 0;
   inline-size: 100%;
-  background-color: var(--color-backh);
+  background-color: var(--color-back2);
   box-shadow: 0 2px 4px var(--color-shadow);
   backdrop-filter: blur(5px);
   z-index: 1;
+  view-transition-name: none;
 
   & > div {
     display: flex;
@@ -70,7 +71,7 @@ body > header {
       inset-block-start: 100%;
       inset-inline-end: 0;
       padding-block: 0.5em;
-      background-color: var(--color-backh);
+      background-color: var(--color-back2);
       box-shadow: 0 3px 2px var(--color-shadow);
       overflow-block: auto;
       overscroll-behavior: contain;
@@ -102,6 +103,14 @@ body > header {
 
     }
 
+  }
+
+  @media (height > 30rem) {
+    position: fixed;
+
+    &, & details menu {
+      background-color: var(--color-backh);
+    }
   }
 
 }

@@ -80,6 +80,7 @@ nav.properties {
 
   p.datefrom {
     font-size: var(--fsize--1);
+    text-align: center;
   }
 
   ul {
@@ -118,3 +119,19 @@ nav.properties {
   }
 
 }
+
+/* view transitions - disabled */
+/* [id^="property-"] {
+  view-transition-name: attr(id type(<custom-ident>), none);
+  view-transition-class: property;
+}
+
+[id^="proptitle-"] {
+  view-transition-name: attr(id type(<custom-ident>), none);
+  view-transition-class: title;
+}
+
+[id^="propimage-"] {
+  view-transition-name: attr(id type(<custom-ident>), none);
+  view-transition-class: image;
+} */
