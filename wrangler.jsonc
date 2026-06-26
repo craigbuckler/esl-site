@@ -5,7 +5,7 @@
 {
   "name": "esl-site",
   "compatibility_date": "2026-06-24",
-  "workers_dev": true,
+  "workers_dev": false,
   "build": {
     "command": "npm run build"
   },
@@ -17,11 +17,11 @@
   },
   "observability": {
     "enabled": false
-  }
-  // "routes": [
-  //   {
-  //     "pattern": "www.exeter-student-lets.co.uk",
-  //     "custom_domain": true
-  //   }
-  // ]
+  },
+  "routes": [
+    {
+      "pattern": "www.exeter-student-lets.co.uk",
+      "custom_domain": true
+    }
+  ]
 }
