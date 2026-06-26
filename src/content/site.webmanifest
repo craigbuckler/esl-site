@@ -4,7 +4,7 @@
   "name"              : "${ tacs.config.title }",
   "short_name"        : "${ tacs.config.title }",
   "description"       : "${ tacs.config.description }",
-  "categories"        : [ "Exeter", "student", "lets", "accommodation", "housing", "rent" ],
+  "categories"        : [ "Exeter", "student", "lets", "property", "accommodation", "house", "flat", "rent", "rental", "tenancy", "occupancy" ],
   "scope"             : "${ tacs.root }",
   "start_url"         : "${ tacs.root }",
   "display"           : "minimal-ui",

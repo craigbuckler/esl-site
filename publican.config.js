@@ -51,6 +51,7 @@ publican.config.tagPages.size = 48;
 
 // pass-through files
 publican.config.passThrough.add({ from: './src/media', to: './media/' });
+publican.config.passThrough.add({ from: './src/media/root/', to: './' });
 
 // jsTACs rendering defaults
 const port = env('SERVE_PORT', 8000);
