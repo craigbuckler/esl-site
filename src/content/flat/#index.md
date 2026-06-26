@@ -1,8 +1,9 @@
 ---
 title: Exeter student flats
-menu: Flats
+menu: student flats
+menuicon: flat
 description: Student flats for occupancy in Exeter, Devon, UK.
-priority: 1.0
+priority: 0.74
 ---
 
 Exeter Student Lets offers the following flats in Exeter.

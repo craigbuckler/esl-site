@@ -1,8 +1,8 @@
 // Publican configuration
 import { Publican, tacs } from 'publican';
 import { libInit, env, apiFetch, sortBy, normalize } from 'publican.lib';
-import { renderstartData } from 'publican.lib/hook';
-import { renderstartTag } from './lib/hook.js';
+import { renderstartData, prerenderInlineScripts } from 'publican.lib/hook';
+import { renderstartTag, prerenderSchema } from './lib/hook.js';
 import * as nav from './lib/nav.js';
 import { imageInfo, allImageInfo } from './lib/image.js';
 
@@ -74,10 +74,6 @@ tacs.config.buildDate = new Date();
 libInit(publican, tacs);
 tacs.lib.format.setLocale( tacs.config.language );
 
-// replace publican.lib hook
-publican.config.processRenderStart.delete( renderstartData );
-publican.config.processRenderStart.add( renderstartTag );
-
 // handle hero images
 const hero = await allImageInfo( 'media/hero', './src/', publican.config.root );
 let heroItem = 0;
@@ -90,6 +86,14 @@ publican.config.processPreRender.add( data => {
   }
 
 });
+
+// replace publican.lib hooks
+publican.config.processRenderStart.delete( renderstartData );
+publican.config.processRenderStart.add( renderstartTag );
+
+publican.config.processPreRender.delete( prerenderInlineScripts );
+publican.config.processPreRender.add( prerenderSchema );
+
 
 // define custom functions
 tacs.fn = tacs.fn || {};

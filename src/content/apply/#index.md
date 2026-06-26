@@ -1,8 +1,9 @@
 ---
 title: Apply for occupancy
-menu: Apply
+menu: contact
+menuicon: email
 description: How to contact us to arrange a viewing of a student property in Exeter.
-priority: 0.9
+priority: 0.71
 ---
 
 To arrange a student property viewing, please contact:

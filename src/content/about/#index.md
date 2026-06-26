@@ -1,8 +1,9 @@
 ---
 title: About Exeter Student Lets
-menu: About
+menu: about us
+menuicon: info
 description: More information about Exeter Student Lets accommodation service.
-priority: 0.8
+priority: 0.72
 ---
 
 Hello.

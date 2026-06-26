@@ -1,8 +1,9 @@
 ---
 title: Exeter student houses
-menu: Houses
+menu: student houses
+menuicon: house
 description: Student houses in Exeter, Devon, UK.
-priority: 1.0
+priority: 0.75
 ---
 
 Exeter Student Lets offers the following houses for occupancy in Exeter.

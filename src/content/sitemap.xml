@@ -5,7 +5,7 @@ ${ ( toArray(tacs.all) ).filter(p => p.index !== false).map(p => `
   <loc>${ tacs.config.domain }${ p.link }</loc>
   <lastmod>${ tacs.lib.format.dateISO( p.modified || p.date ) }</lastmod>
   <changefreq>${ p.index || 'monthly' }</changefreq>
-  <priority>${ p.priority }</priority>
+  <priority>${ Math.round( p.priority * 100 ) / 100 }</priority>
 </url>
 `)
 }

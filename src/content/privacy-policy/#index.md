@@ -1,6 +1,6 @@
 ---
 title: Exeter Student Lets privacy policy
-menu: Privacy
+menu: false
 description: Your privacy rights when using our student accommodation services.
 priority: 0.5
 ---
