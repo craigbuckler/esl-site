@@ -29,15 +29,15 @@
   --color-black: rgba(0,0,0,0.3);
   --color-white: rgba(255,255,255,1);
 
-  --color-fore1: light-dark( oklch(0.15 0.15 255), oklch(0.7 0.1 255) );
-  --color-fore2: light-dark( oklch(0.30 0.15 255), oklch(0.7 0.2 255) );
-  --color-fore3: light-dark( oklch(0.45 0.15 255), oklch(0.7 0.3 255) );
-  --color-fore4: light-dark( oklch(0.60 0.15 255), oklch(0.7 0.4 255) );
+  --color-fore1: light-dark( oklch(0.15 0.15 255), oklch(0.8 0.1 255) );
+  --color-fore2: light-dark( oklch(0.30 0.15 255), oklch(0.8 0.2 255) );
+  --color-fore3: light-dark( oklch(0.45 0.15 255), oklch(0.8 0.3 255) );
+  --color-fore4: light-dark( oklch(0.60 0.15 255), oklch(0.8 0.4 255) );
 
   --color-back1: light-dark( oklch(1.0 0.02 255), oklch(0.20 0.03 255) );
-  --color-back2: light-dark( oklch(0.9 0.02 255), oklch(0.25 0.03 255) );
-  --color-back3: light-dark( oklch(0.8 0.02 255), oklch(0.30 0.03 255) );
-  --color-back4: light-dark( oklch(0.7 0.02 255), oklch(0.35 0.03 255) );
+  --color-back2: light-dark( oklch(0.94 0.02 255), oklch(0.25 0.03 255) );
+  --color-back3: light-dark( oklch(0.86 0.02 255), oklch(0.30 0.03 255) );
+  --color-back4: light-dark( oklch(0.8 0.02 255), oklch(0.35 0.03 255) );
 
   --color-hint1: light-dark(oklch(0.53 0.13 54.76), oklch(0.78 0.13 54.76));
   --color-hint2: light-dark(oklch(0.26 0.13 54.76), oklch(0.63 0.13 54.76));
