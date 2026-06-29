@@ -66,6 +66,6 @@ ul.quotes {
   }
 }
 
-.print {
+.print, .alt {
   display: none;
 }

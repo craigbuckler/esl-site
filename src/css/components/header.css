@@ -48,6 +48,14 @@ body > header {
     margin-inline-start: auto;
   }
 
+  .logo span {
+    display: none;
+
+    @media (width > 28rem) {
+      display: inline-block;
+    }
+  }
+
   details {
     position: relative;
 
@@ -119,49 +127,12 @@ body > header {
 
 }
 
-.logo {
-
-  line-height: 1;
-  margin: 0;
-
-  svg {
-    inline-size: 3.2em;
-    block-size: 3.2em;
-  }
-
-  svg, span {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  strong, em {
-    display: block;
-  }
-
-  strong {
-    font-size: 1.75em;
-    font-weight: 900;
-  }
-
-  em {
-    font-weight: 400;
-  }
-
-  span {
-    display: none;
-
-    @media (width > 28rem) {
-      display: inline-block;
-    }
-  }
-
-}
-
 static-search {
 
   display: block;
   visibility: hidden;
   inline-size: 1.8em;
+  block-size: auto;
   margin-block: auto;
   margin-inline-start: auto;
   pointer-events: none;

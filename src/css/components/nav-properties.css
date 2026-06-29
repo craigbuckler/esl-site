@@ -91,7 +91,8 @@ nav.properties {
     justify-content: space-evenly;
 
     svg {
-      inline-size: 1.4em;
+      inline-size: 1em;
+      block-size: 1em;
     }
   }
 

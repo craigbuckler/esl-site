@@ -1,0 +1,49 @@
+.logo {
+
+  line-height: 1;
+  margin: 0;
+
+  svg {
+    inline-size: 3.2em;
+    block-size: 3.2em;
+  }
+
+  svg, span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  strong, em {
+    display: block;
+  }
+
+  strong {
+    font-size: 1.75em;
+    font-weight: 900;
+  }
+
+  em {
+    font-weight: 400;
+  }
+
+}
+
+#svg-logo g {
+  transform-origin: 90% 40%;
+  animation: swing 8s linear infinite;
+}
+
+@keyframes swing {
+  0% { rotate: 0deg; }
+  2% { rotate: -2deg; }
+  6% { rotate: 4deg; }
+  10% { rotate: -6deg; }
+  14% { rotate: 8deg; }
+  18% { rotate: -10deg; }
+  22% { rotate: 8deg; }
+  26% { rotate: -6deg; }
+  30% { rotate: 4deg; }
+  34% { rotate: -2deg; }
+  40% { rotate: 0deg; }
+  100% { rotate: 0deg; }
+}

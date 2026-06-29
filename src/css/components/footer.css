@@ -2,6 +2,7 @@ body > footer {
 
   font-size: var(--fsize--1);
   padding-block: 2em;
+  color: var(--color-fore3);
 
   ul, li {
     list-style-type: none;
@@ -18,7 +19,6 @@ body > footer {
   }
 
   a:link, a:visited {
-    display: block;
     white-space: no-wrap;
     text-decoration: none;
     color: var(--color-fore3);
@@ -29,8 +29,14 @@ body > footer {
   }
 
   p {
-    font-weight: 400;
+    font-size: var(--fsize--2);
     text-align: center;
+    margin: 0.8em 0;
+  }
+
+  .logo {
+    font-size: 1.5em;
+    margin-block: 2em 0;
   }
 
 }

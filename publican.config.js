@@ -70,6 +70,7 @@ tacs.config.themeColor = env('SITE_THEMECOLOR', '#000');
 tacs.config.email = env('SITE_EMAIL');
 tacs.config.phone = env('SITE_PHONE');
 tacs.config.buildDate = new Date();
+tacs.config.trading = (new Date()).getUTCFullYear() - 1997;
 
 // initialize library
 libInit(publican, tacs);
@@ -80,6 +81,10 @@ const hero = await allImageInfo( 'media/hero', './src/', publican.config.root );
 let heroItem = 0;
 
 publican.config.processPreRender.add( data => {
+
+  if (!data.hero && data.image) {
+    data.hero = hero.find(i => i.src.includes(data.image));
+  }
 
   if (!data.hero) {
     data.hero = hero[ heroItem ];

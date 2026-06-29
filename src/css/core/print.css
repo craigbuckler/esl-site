@@ -33,7 +33,7 @@
 
   main {
     padding-block: 0 !important;
-    column-width: 24em;
+    column-width: 30em;
     column-gap: 3em;
 
     header.full {
@@ -57,6 +57,22 @@
 
   .properties {
     column-span: all;
+
+    figure {
+      block-size: auto !important;
+      border: 0 none !important;
+      overflow: visible !important;
+    }
+
+    img {
+      block-size: 7em !important;
+    }
+
+    h2, h3 {
+      font-weight: 300 !important;
+      text-shadow: none !important;
+      transform: none !important;
+    }
   }
 
   .tabs {
@@ -70,7 +86,8 @@
   }
 
   #plan img {
-    block-size: 500px !important;
+    max-block-size: 500px !important;
+    block-size: 100% !important;
     inline-size: auto !important;
   }
 

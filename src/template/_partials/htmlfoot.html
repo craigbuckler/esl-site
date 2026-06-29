@@ -10,9 +10,6 @@
 
 </template>
 
-
-<p class="print">View this page at <strong>${ tacs.config.domain }${ data.link }</strong></p>
-
 <footer><nav>
 
   <ul>
@@ -23,11 +20,22 @@
     <li><a href="__/apply/"><svg><use xlink:href="#svg-phone"></use></svg> contact</a></li>
   </ul>
 
-  <p>--COPYRIGHT-- Exeter Student Lets</p>
+  <p class="logo"><a href="${ tacs.root }" title="Exeter Student Lets">
+    <svg><use xlink:href="#svg-logo"></use></svg>
+    <span><strong>EXETER</strong> <em>STUDENT LETS</em></span>
+  </a></p>
+
+  <p><a href="__/about/">Serving Exeter students for ${ tacs.config.trading } years</a></p>
+
+  <p><a href="https://www.optimalworks.net/">--COPYRIGHT-- OptimalWorks</a></p>
 
 </nav></footer>
 
 <a href="#" id="top" title="top"><svg><use xlink:href="#svg-up"></use></svg></a>
+
+<p class="print">View this page at <strong>${ tacs.config.domain }${ data.link }</strong></p>
+
+<p class="print">--COPYRIGHT-- ${ tacs.config.author }</p>
 
 ${ tacs.script.get('speculation').code }
 

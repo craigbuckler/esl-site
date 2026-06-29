@@ -50,7 +50,7 @@ main > header {
 /* blur property image */
 main[id] header.full img {
   scale: 1.05;
-  filter: blur(6px);
+  filter: blur(4px) sepia(40%);
 }
 
 /* breadcrumb */

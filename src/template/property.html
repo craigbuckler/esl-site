@@ -42,7 +42,7 @@ ${ include('_partials/header.html') }
         <dd>${ tacs.lib.format.number( data.prop.receptions ) }</dd>
 
         <dt><svg><use xlink:href="#svg-walk"></use></svg> distance</dt>
-        <dd>${ tacs.lib.format.number( data.prop.unimins ) }-minutes to University</dd>
+        <dd>${ tacs.lib.format.number( data.prop.unimins ) }-minute walk to University</dd>
 
         <dt><svg><use xlink:href="#svg-utility"></use></svg> <abbr title="Energy Performance Certificate">EPC</abbr></dt>
         <dd>${ data.prop.epc }</dd>
@@ -106,7 +106,7 @@ ${ include('_partials/header.html') }
 
     <p><a href="__/apply/" data-email="info {at} exeter-student-lets dot co dot uk" class="button">VIEW PROPERTY</a></p>
 
-    <p class="note">To reserve this property, students must pay a holding deposit of ${ tacs.lib.format.currency( data.prop.depositholding, 'GBP' ).replace('.00', '') } each. The remainder deposit of ${ tacs.lib.format.currency( data.prop.depositremainder, 'GBP' ).replace('.00', '') } each is payable when the contract is signed. Deposits are protected by <a href="https://www.mydeposits.co.uk/">MyDeposits</a>.</p>
+    <p class="note">To reserve this property after viewing, students must pay a holding deposit of ${ tacs.lib.format.currency( data.prop.depositholding, 'GBP' ).replace('.00', '') } each. The remainder deposit of ${ tacs.lib.format.currency( data.prop.depositremainder, 'GBP' ).replace('.00', '') } each is payable when the contract is signed. Deposits are protected by <a href="https://www.mydeposits.co.uk/">MyDeposits</a> and <a href="https://help.exeter-student-lets.co.uk/moving-out/deposit/">returned</a> when the contract ends.</p>
 
   ` }
 

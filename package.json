@@ -20,7 +20,8 @@
   "main": "publican.config.js",
   "scripts": {
     "build": "node --env-file=.env.dev --env-file=.env.prod ./publican.config.js",
-    "start": "[ ! -f .env ] || export $(grep -v '^#' .env | xargs) && node --env-file=.env.dev ./publican.config.js"
+    "buildtest": "node --env-file=.env --env-file=.env.dev --env-file=.env.prod ./publican.config.js",
+    "start": "node --env-file=.env --env-file=.env.dev ./publican.config.js"
   },
   "dependencies": {
     "esbuild": "0.28.1",
@@ -33,6 +34,6 @@
     "livelocalhost": "1.2.7"
   },
   "allowScripts": {
-    "esbuild@0.28.0": true
+    "esbuild": true
   }
 }

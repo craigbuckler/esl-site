@@ -12,7 +12,7 @@ base-uri 'self';
 img-src 'self' data: https://i.ytimg.com;
 media-src 'self';
 font-src 'self';
-style-src 'self' 'sha256-b4EJa4w89jtLvjxsBloYaCfwO1Xltuqrcz89Gtfj77U=';
+style-src 'self' 'sha256-d36/LWfscriekaGQA4mpQXQiPfia0BMG+saF6WPn50o=' 'sha256-b4EJa4w89jtLvjxsBloYaCfwO1Xltuqrcz89Gtfj77U=';
 script-src 'self' 'sha256-${ tacs.script.get('theme').hash }' 'sha256-${ data.script.get('schema').hash }' 'sha256-${ tacs.script.get('speculation').hash }';
 connect-src 'self';
 form-action 'none';
@@ -21,6 +21,7 @@ manifest-src 'self';
 ">
 
 <!-- assets -->
+<style>static-search,svg{display:inline-block;inline-size:20px;block-size:20px}</style>
 <link rel="stylesheet" href="${ tacs.root }css/main.css">
 <script type="module" src="${ tacs.root }js/main.js"></script>
 <script type="module" src="${ tacs.root }search/staticsearch-component.js"></script>

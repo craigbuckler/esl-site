@@ -4,6 +4,7 @@ menu: contact
 menuicon: email
 description: How to contact us to arrange a viewing of a student property in Exeter.
 priority: 0.71
+image: students-03
 ---
 
 To arrange a student property viewing, please contact:
@@ -31,4 +32,4 @@ To reserve a property after viewing, all students must:
 
 1. Pay the remainder of the deposit.
 
-The process takes up to ten working days depending on the speed of student and guarantor responses. The full deposit is protected by [MyDeposits](https://www.mydeposits.co.uk/).
+The process takes up to ten working days depending on the speed of student and guarantor responses. The full deposit is protected by [MyDeposits](https://www.mydeposits.co.uk/) and [returned](https://help.exeter-student-lets.co.uk/moving-out/deposit/) when the contract ends.

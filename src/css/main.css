@@ -4,6 +4,7 @@
 @import url('./core/elements.css');
 @import url('./core/layout.css');
 
+@import url('./components/logo.css');
 @import url('./components/header.css');
 @import url('./components/title.css');
 @import url('./components/tabs.css');

@@ -1,19 +1,19 @@
 <header><div>
 
-  <p class="logo"><a href="${ tacs.root }" title="Documentation">
+  <p class="logo"><a href="${ tacs.root }" title="Exeter Student Lets">
     <svg><use xlink:href="#svg-logo"></use></svg>
     <span><strong>EXETER</strong> <em>STUDENT LETS</em></span>
   </a></p>
 
-  <p class="call"><a href="tel:+44-7740-309-077" title="call us"><svg><use xlink:href="#svg-phone"></use></svg></a></p>
+  <p class="call"><a href="tel:+44-7740-309-077" title="call us"><svg><use xlink:href="#svg-phone"></use></svg> <span class="alt">call us</span></a></p>
 
-  <p class="email"><a href="__/apply/" data-email="info {at} exeter-student-lets dot co dot uk" title="email us"><svg><use xlink:href="#svg-email"></use></svg></a></p>
+  <p class="email"><a href="__/apply/" data-email="info {at} exeter-student-lets dot co dot uk" title="email us"><svg><use xlink:href="#svg-email"></use></svg> <span class="alt">email us</span></a></p>
+
+  ${ include('_partials/share.html') }
 
   <static-search label="search" title="search Ctrl+K">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
   </static-search>
-
-  ${ include('_partials/share.html') }
 
   ${ include('_partials/menu.html') }
 

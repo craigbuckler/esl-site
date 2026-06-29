@@ -158,7 +158,7 @@ sup, sub {
 
 a:link, a:visited {
   text-decoration: underline;
-  text-underline-offset: 0.2em;
+  text-underline-offset: 0.1em;
   color: var(--color-hint1);
 
   &.nodec {

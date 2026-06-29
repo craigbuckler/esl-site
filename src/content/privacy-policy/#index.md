@@ -3,6 +3,7 @@ title: Exeter Student Lets privacy policy
 menu: false
 description: Your privacy rights when using our student accommodation services.
 priority: 0.5
+image: exeter-canal-01
 ---
 
 Your contact details are private and we are committed to protecting them. We promise to:
