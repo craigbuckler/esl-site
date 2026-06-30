@@ -35,15 +35,15 @@
 
 @keyframes swing {
   0% { rotate: 0deg; }
-  2% { rotate: -2deg; }
-  6% { rotate: 4deg; }
-  10% { rotate: -6deg; }
-  14% { rotate: 8deg; }
-  18% { rotate: -10deg; }
-  22% { rotate: 8deg; }
-  26% { rotate: -6deg; }
-  30% { rotate: 4deg; }
-  34% { rotate: -2deg; }
-  40% { rotate: 0deg; }
+  62% { rotate: 0deg; }
+  64% { rotate: -2deg; }
+  68% { rotate: 4deg; }
+  72% { rotate: -6deg; }
+  76% { rotate: 8deg; }
+  80% { rotate: -10deg; }
+  84% { rotate: 8deg; }
+  88% { rotate: -6deg; }
+  92% { rotate: 4deg; }
+  96% { rotate: -2deg; }
   100% { rotate: 0deg; }
 }

@@ -61,15 +61,21 @@ body > header {
 
     summary {
 
+      list-style-type: none;
       cursor: pointer;
 
       &::marker {
         content: '';
       }
 
+      &::-webkit-details-marker {
+        display: none;
+      }
+
       svg {
         block-size: var(--header-height);
       }
+
     }
 
     menu {

@@ -2,6 +2,7 @@
 const cfgShare = {
   selector  : '.share',
   appHash   : '#shareapp',
+  printHash : '#print',
   width     : 800,
   height    : 800,
   margin    : 20
@@ -66,20 +67,33 @@ document.addEventListener('click', e => {
 });
 
 
-// hidden share activation
+// activate hidden share
 if (navigator.share) {
-
-  Array.from( document.querySelectorAll( cfgShare.selector ) ).forEach(share => {
-
-    Array.from( share.querySelectorAll('[hidden]') ).forEach(applink => applink.removeAttribute('hidden'));
-
-  });
-
+  Array.from( document.querySelectorAll(`[hidden]:has(a[href$="${ cfgShare.appHash }"])`) ).forEach(applink => applink.removeAttribute('hidden'));
 }
+
+// activate hidden print
+Array.from( document.querySelectorAll(`[hidden]:has(a[href$="${ cfgShare.printHash }"])`) ).forEach(applink => applink.removeAttribute('hidden'));
 
 
 // share clicked
-function shareHandler(event, link) {
+async function shareHandler(event, link) {
+
+  // print
+  if (link.hash === cfgShare.printHash) {
+
+    event.preventDefault();
+
+    // load lazy images
+    await Promise.allSettled(
+      Array.from( document.querySelectorAll('img[loading="lazy"]') ).map(img => loadImage(img))
+    );
+
+    // print page
+    window.print();
+
+    return;
+  }
 
   // share API?
   if (link.hash === cfgShare.appHash) {
@@ -127,5 +141,21 @@ function shareHandler(event, link) {
     'social',
     `popup,noopener,noreferrer,width=${ pw },height=${ ph },left=${ px },top=${ py }`
   );
+
+}
+
+
+// load lazy image
+function loadImage(img) {
+
+  return new Promise(resolve => {
+
+    const i = new Image(img.width, img.height);
+    i.onload = resolve;
+    i.onerror = resolve;
+    i.src = img.src;
+    img.setAttribute('loading', 'eager');
+
+  });
 
 }

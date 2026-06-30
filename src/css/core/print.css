@@ -33,8 +33,8 @@
 
   main {
     padding-block: 0 !important;
-    column-width: 30em;
-    column-gap: 3em;
+    column-width: 27em;
+    column-gap: 4em;
 
     header.full {
 

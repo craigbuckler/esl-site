@@ -3,15 +3,19 @@
   <summary title="share page"><svg><use xlink:href="#svg-share"></use></svg> <span class="alt">share page</span></summary>
 
   <menu>
+
     <li><strong>share page using</strong></li>
 
-    <li hidden><a href="#shareapp" title="share via an app" data-url="${ tacs.config.domain + data.link }" data-title="${ data.title }" data-description="${ data.description }"><svg><use xlink:href="#svg-share"></use></svg> app</a></li>
-
-    <li><a href="mailto:?subject=${ encodeURIComponent(data.title) }&amp;body=${ encodeURIComponent(data.description + '\n' + tacs.config.domain + data.link) }" title="share via email" rel="noopener noreferrer"><svg><use xlink:href="#svg-email"></use></svg> email</a></li>
+    <li hidden><a href="#shareapp" title="share via an app" data-url="${ tacs.config.domain + data.link }" data-title="${ data.title }" data-description="${ data.description }"><svg><use xlink:href="#svg-share"></use></svg> device app</a></li>
 
     <li><a href="https://web.whatsapp.com/send?text=${ encodeURIComponent(data.title + '\n' + data.description + '\n' + tacs.config.domain + data.link) }" title="share via WhatsApp" target="_blank" rel="noopener noreferrer"><svg><use xlink:href="#svg-whatsapp"></use></svg> WhatsApp</a></li>
 
     <li><a href="https://t.me/share/url?url=${ encodeURIComponent(tacs.config.domain + data.link) }&amp;text=${ encodeURIComponent(data.title) }" title="share on Telegram" target="_blank" rel="noopener noreferrer"><svg><use xlink:href="#svg-telegram"></use></svg> Telegram</a></li>
+
+    <li><a href="mailto:?subject=${ encodeURIComponent(data.title) }&amp;body=${ encodeURIComponent(data.description + '\n' + tacs.config.domain + data.link) }" title="share via email" rel="noopener noreferrer"><svg><use xlink:href="#svg-email"></use></svg> email</a></li>
+
+    <li hidden><a href="#print" title="print page"><svg><use xlink:href="#svg-print"></use></svg> print</a></li>
+
   </menu>
 
 </details>
