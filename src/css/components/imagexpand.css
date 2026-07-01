@@ -1,27 +1,32 @@
-.imagexpand img {
-  cursor: zoom-in;
+@media (scripting: enabled) {
+
+  .imagexpand img {
+    cursor: zoom-in;
+  }
+
 }
 
 dialog.imgopen {
   position: fixed;
   inline-size: 100dvi;
   block-size: 100dvb;
-  max-inline-size: calc(100dvi - (2 * var(--pad)));
-  max-block-size: calc(100dvb - (2 * var(--pad)));
+  max-inline-size: calc(100dvi - (2 * var(--imagexpand-pad)));
+  max-block-size: calc(100dvb - (2 * var(--imagexpand-pad)));
   margin: auto;
   padding: 0;
   border: 0 none;
   outline: 0 none;
   background-color: transparent;
-  overflow: hidden;
   transform-origin: 50%;
 
   img {
     display: block;
     inline-size: 100%;
     block-size: 100%;
-    aspect-ratio: none;
+    aspect-ratio: auto;
     object-fit: contain;
+    padding: 0;
+    margin: 0;
     cursor: zoom-out;
   }
 

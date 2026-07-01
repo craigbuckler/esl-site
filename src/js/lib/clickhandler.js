@@ -17,7 +17,6 @@ const details = document.getElementsByTagName('details');
 // generated <dialog>
 let dialog;
 
-
 // click event handler
 document.addEventListener('click', e => {
 
@@ -36,6 +35,7 @@ document.addEventListener('click', e => {
       dialog = document.body.appendChild( document.createElement('dialog') );
       dialog.className = 'imgopen';
       dialog.setAttribute('closedBy', 'any');
+      history.pushState(null, '');
     }
 
     dialog.innerHTML = `<img src="${ target.src }" width="${ target.naturalWidth }" height="${ target.naturalHeight}">`;
@@ -63,6 +63,16 @@ document.addEventListener('click', e => {
 
   }, 50);
 
+
+});
+
+
+// handle back button when dialog is open
+window.addEventListener('popstate', () => {
+
+  if (dialog?.open) {
+    dialog.close();
+  }
 
 });
 

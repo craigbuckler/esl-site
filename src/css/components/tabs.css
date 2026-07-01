@@ -62,6 +62,19 @@
     }
   }
 
+  /* no video or map unless JS enabled */
+  li:has(a[href="#video"]), li:has(a[href="#map"]) {
+    display: none;
+  }
+
+  @media (scripting: enabled) {
+
+    li:has(a[href="#video"]), li:has(a[href="#map"]) {
+      display: block;
+    }
+
+  }
+
 }
 
 .tabs {

@@ -24,6 +24,7 @@
   --layout-margin: min(4vw, 4ch);
   --main-width: min(var(--layout-width), 100% - (2 * var(--layout-margin)));
   --header-fix-height: calc(var(--header-height) + 1em);
+  --imagexpand-pad: 1vmin;
 
   /* colors */
   --color-black: rgba(0,0,0,0.3);
