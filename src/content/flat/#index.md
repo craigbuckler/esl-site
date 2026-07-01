@@ -6,4 +6,4 @@ description: Student flats for occupancy in Exeter, Devon, UK.
 priority: 0.74
 ---
 
-Exeter Student Lets offers the following flats in Exeter.
+Exeter Student Lets offers the following flats for occupancy in Exeter for the **academic year starting August ${ tacs.config.year }**.

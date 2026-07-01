@@ -10,7 +10,7 @@
     src: url('/media/fonts/outfit.woff2') format('woff2 supports variations'),
          url('/media/fonts/outfit.woff2') format('woff2-variations');
     font-feature-settings: 'liga', 'salt';
-    font-display: fallback;
+    font-display: swap;
     font-style: normal;
     font-weight: 100 900;
   }

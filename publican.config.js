@@ -27,7 +27,8 @@ if (!propData.ok || !propData?.body?.length) {
 const
   publican = new Publican(),
   isDev = (env('NODE_ENV') === 'development'),
-  property = propData.body;
+  property = propData.body,
+  yearDefault = (new Date()).getUTCFullYear() + 1;
 
 console.log(`Building ${ isDev ? 'development' : 'production' } site`);
 
@@ -62,6 +63,7 @@ tacs.config.siteID = env('SITE_ID');
 tacs.config.domain = isDev ? `http://localhost:${ port }` : env('SITE_DOMAIN');
 tacs.config.title = env('SITE_TITLE');
 tacs.config.description = env('SITE_DESCRIPTION');
+tacs.config.year = env('SITE_YEAR', yearDefault);
 tacs.config.author = env('SITE_AUTHOR');
 tacs.config.authorUrl = env('SITE_AUTHORURL');
 tacs.config.authorX = env('SITE_AUTHORX');
@@ -112,7 +114,7 @@ for (let idx = 0; idx < property?.length || 0; idx++) {
 
   const
     p = property[idx],
-    period = p.period.sort(sortBy('datefrom')).at(0);
+    period = p.period.find(pi => pi.code == tacs.config.year) || { code: yearDefault, datefrom: `${ yearDefault }-08-01`, dateto: `${ yearDefault + 1 }-07-31`, priceweek: 0, depositholding: 0, depositremainder: 0, let: true };
 
   // append data
   p.year = period.code;

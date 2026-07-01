@@ -79,7 +79,7 @@ ${ include('_partials/header.html') }
 
       <section id="photos" class="photogrid imagexpand">
 
-        ${ data.prop.photo.map((i, ix) => `<img src="${ i.src }" width="${ i.width || 600 }" height="${ i.height || 600 }" alt="${ tacs.lib.feed.escape( data.prop.title ) } photograph ${ ix+1 }" class="${ i.height > i.width ? 'port' : 'land'}" loading="lazy">`).join('') }
+        ${ data.prop.photo.map((i, ix) => `<img src="${ i.src }" width="${ i.width || 600 }" height="${ i.height || 600 }" alt="${ tacs.lib.feed.escape( data.prop.title ) } photograph ${ ix+1 }" class="${ i.height > i.width ? 'port' : 'land'}" loading="lazy" fetchpriority="low">`).join('') }
 
       </section>
 

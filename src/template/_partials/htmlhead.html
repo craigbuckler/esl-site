@@ -22,9 +22,9 @@ manifest-src 'self';
 
 <!-- assets -->
 <style>static-search,svg{display:inline-block;inline-size:20px;block-size:20px}</style>
-<link rel="stylesheet" href="${ tacs.root }css/main.css">
-<script type="module" src="${ tacs.root }js/main.js"></script>
-<script type="module" src="${ tacs.root }search/staticsearch-component.js"></script>
+<link rel="stylesheet" href="${ tacs.root }css/main.css" fetchpriority="high">
+<script type="module" src="${ tacs.root }js/main.js" fetchpriority="low"></script>
+<script type="module" src="${ tacs.root }search/staticsearch-component.js" fetchpriority="low"></script>
 ${ tacs.script.get('theme').code }
 
 <!-- meta -->
