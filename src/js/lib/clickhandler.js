@@ -1,3 +1,16 @@
+// emailer configuration
+const email = {
+  loadtime: +new Date(),
+  timelimit: 5000,
+  key: `sf_${ atob('YjRjYjM2ZjYyY2JkMjllMzI0OTIwNDZm') }`,
+  timeout: 10000,
+  submit: 'submit',
+  msgSend: '<p>Sending request...</p>',
+  msgSuccess: '<p>Thank you. We will contact you shortly.</p>',
+  msgFail: '<p>Sorry, your message could not be sent.</p><p>Please try again shortly or <a href="#">send us an email</a>.</p>',
+  close: 3000
+};
+
 // share configuration
 const cfgShare = {
   selector  : '.share',
@@ -15,31 +28,41 @@ let pageInfo;
 const details = document.getElementsByTagName('details');
 
 // generated <dialog>
-let dialog;
+let imgDialog;
 
 // click event handler
 document.addEventListener('click', e => {
 
   const target = e.target;
 
+  // form dialog handler
+  const
+    dialogId = target?.dataset?.dialog,
+    dialog = dialogId && document.getElementById(dialogId);
+
+  if (dialog) {
+    e.preventDefault();
+    formHandler(target, dialog);
+  }
+
   // close open dialog?
-  if (dialog?.open && target.closest('dialog') === dialog) {
-    dialog.close();
+  if (imgDialog?.open && target.closest('dialog') === imgDialog) {
+    imgDialog.close();
     return;
   }
 
   // open image dialog
   if (target?.src && target.closest('.imagexpand')) {
 
-    if (!dialog) {
-      dialog = document.body.appendChild( document.createElement('dialog') );
-      dialog.className = 'imgopen';
-      dialog.setAttribute('closedBy', 'any');
+    if (!imgDialog) {
+      imgDialog = document.body.appendChild( document.createElement('dialog') );
+      imgDialog.className = 'imgopen';
+      imgDialog.setAttribute('closedBy', 'any');
       history.pushState(null, '');
     }
 
-    dialog.innerHTML = `<img src="${ target.src }" width="${ target.naturalWidth }" height="${ target.naturalHeight}">`;
-    dialog.showModal();
+    imgDialog.innerHTML = `<img src="${ target.src }" width="${ target.naturalWidth }" height="${ target.naturalHeight}">`;
+    imgDialog.showModal();
 
     return;
 
@@ -70,8 +93,8 @@ document.addEventListener('click', e => {
 // handle back button when dialog is open
 window.addEventListener('popstate', () => {
 
-  if (dialog?.open) {
-    dialog.close();
+  if (imgDialog?.open) {
+    imgDialog.close();
   }
 
 });
@@ -169,3 +192,107 @@ function loadImage(img) {
   });
 
 }
+
+
+// form dialog handler
+function formHandler(invoker, dialog) {
+
+  // get form
+  const form = dialog.querySelector('form');
+
+  // append details
+  form.dialog = dialog;
+  form.invoker = invoker;
+  form.status = dialog.querySelector('.status');
+  form.message = dialog.querySelector('.message');
+  form.buttons = Array.from( dialog.querySelectorAll('button') );
+
+  // handle honeypots
+  if (!form.hp) {
+    form.hp = Array.from( dialog.querySelectorAll('input[name*="honeypot"]') );
+    form.hp.forEach(hp => hp.removeAttribute('required'));
+  }
+
+  // show dialog
+  dialog.showModal();
+
+}
+
+
+// submit handler
+window.addEventListener('submit', async e => {
+
+  e.preventDefault();
+
+  // get form
+  const form = e.target;
+
+  // prevent rapid submit
+  if (+new Date() - email.loadtime < email.timelimit) {
+    form.status.innerHTML = email.msgFail.replace('#', form.invoker.href);
+    return;
+  }
+
+  // one or more honeypots completed?
+  if (!form || form.hp.find(hp => hp.value)) return;
+
+  // is submitting?
+  if (form.submitting) return;
+  form.submitting = true;
+
+  // disable form
+  form.status.innerHTML = email.msgSend;
+  form.dialog.classList.add(email.submit);
+  form.buttons.forEach(b => b.disabled = true);
+
+  // get form data
+  const data = new FormData(form);
+
+  // remove honeypots
+  form?.hp.forEach(hp => data.delete(hp.name));
+
+  // append data
+  data.set('apiKey', email.key);
+
+  // post details
+  let result = { success: false, message: 'Unknown failure' };
+
+  try {
+
+    const response = await fetch(
+      form.action,
+      {
+        method: form.method,
+        body: data,
+        signal: AbortSignal.timeout(email.timeout)
+      }
+    );
+
+    result = await response.json();
+
+  } catch (error) {
+    result.message = error.message;
+  }
+
+  // handle response
+  form.dialog.classList.remove(email.submit);
+  form.buttons.forEach(b => b.disabled = false);
+  form.message.textContent = result.message;
+
+  if (result.success) {
+
+    // success
+    form.status.innerHTML = email.msgSuccess;
+    setTimeout(() => form.dialog.close(), email.close);
+
+  }
+  else {
+
+    // failure
+    form.status.innerHTML = email.msgFail.replace('#', form.invoker.href);
+    email.loadtime = new Date();
+    form.submitting = false;
+
+  }
+
+});

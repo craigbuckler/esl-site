@@ -104,9 +104,48 @@ ${ include('_partials/header.html') }
 
   ${ data.prop.let ? `<p class="center highlight"><strong>This property has been let for ${ data.prop.year } and is no longer available.</strong></p>` : `
 
-    <p><a href="__/apply/" data-email="info {at} exeter-student-lets dot co dot uk" class="button">VIEW PROPERTY</a></p>
+    <p><a href="__/apply/" data-dialog="viewform" data-email="info {at} exeter-student-lets dot co dot uk" class="button">VIEW PROPERTY</a></p>
 
     <p class="note">To reserve this property after viewing, students must pay a holding deposit of ${ tacs.lib.format.currency( data.prop.depositholding, 'GBP' ).replace('.00', '') } each. The remainder deposit of ${ tacs.lib.format.currency( data.prop.depositremainder, 'GBP' ).replace('.00', '') } each is payable when the contract is signed. Deposits are protected by <a href="https://www.mydeposits.co.uk/">MyDeposits</a> and <a href="https://help.exeter-student-lets.co.uk/moving-out/deposit/">returned</a> when the contract ends.</p>
+
+    <dialog id="viewform" closedby="closerequest">
+
+      <p>Please enter your details to view</p>
+      <p><strong>${ data.prop.street }</strong></p>
+      <p class="f-1">${ data.prop.bedrooms } bedroom${ data.prop.bedrooms === 1 ? '' : 's' }, from ${ tacs.lib.format.dateHuman( data.prop.datefrom ) }</p>
+
+      <form action="https://api.staticforms.dev/submit" method="post">
+
+        <input type="hidden" name="subject" value="view ${ data.prop.street }">
+        <input type="hidden" name="contract" value="${ data.prop.bedrooms }-bed, ${ tacs.lib.format.number( data.prop.weeks ) } weeks from ${ tacs.lib.format.dateHuman( data.prop.datefrom ) }">
+        <input type="hidden" name="website" value="${ tacs.config.domain }${ data.link }">
+
+        <div class="formgrid">
+
+          <label for="name">name</label>
+          <input type="text" id="name" name="name" autocomplete="name" enterkeyhint="next" required minlength="2" maxlength="30">
+
+          <label for="email">email</label>
+          <input type="email" id="email" name="email" autocomplete="email" inputmode="email" enterkeyhint="next" required>
+
+          <label for="phone">phone</label>
+          <input type="text" id="phone" name="phone" autocomplete="tel" inputmode="tel" enterkeyhint="go" required minlength="11" maxlength="20">
+
+        </div>
+
+        <input type="text" name="esl-honeypot" required>
+        <input type="text" name="honeypotx" required>
+
+        <button>SUBMIT</button>
+
+      </form>
+
+      <div class="status"></div>
+      <p class="message"></p>
+
+      <button commandfor="viewform" command="close"><svg><use xlink:href="#svg-close"></use></svg></button>
+
+    </dialog>
 
   ` }
 

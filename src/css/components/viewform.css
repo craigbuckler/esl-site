@@ -1,0 +1,117 @@
+/* view property form */
+dialog#viewform {
+
+  position: fixed;
+  inline-size: auto;
+  max-inline-size: 20em;
+  margin: auto;
+  padding: 1em;
+  background-color: var(--color-back3);
+  border: 0 none;
+  outline: 0 none;
+  box-shadow: 0 2px 3px #000;
+
+  &, &::backdrop {
+    transition: all 0.6s ease-out;
+    transition-behavior: allow-discrete;
+  }
+
+  &[open] {
+
+    opacity: 1;
+    transform: scale(1);
+
+    @starting-style {
+      display: block;
+      opacity: 0;
+      transform: translateY(-50%);
+    }
+
+    &::backdrop {
+      background-color: rgba(0,0,0,0.2);
+      backdrop-filter: blur(3px);
+
+      @starting-style {
+        background-color: rgba(0,0,0,0);
+        backdrop-filter: blur(0);
+      }
+
+    }
+
+  }
+
+  &:not([open]) {
+    display: none;
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  /* hide honeypot fields */
+  input[name*="honeypot"] {
+    display: none;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .status {
+    font-size: var(--fsize--1);
+    font-weight: 500;
+    text-align: center;
+    color: var(--color-fore3);
+  }
+
+  .message {
+    display: none;
+  }
+
+  form button {
+    margin-block: 0.4em;
+  }
+
+}
+
+/* grid */
+.formgrid {
+  display: grid;
+  grid-template-columns: 3em 1fr;
+  align-items: center;
+  gap: 0.2em 0.8em;
+  margin: 1em 0 0 0;
+
+  label {
+    text-align: end;
+  }
+
+  input {
+    inline-size: 100%;
+  }
+
+}
+
+/* submit */
+dialog.submit {
+
+  pointer-events: none;
+
+  &::after {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    display: block;
+    content: '';
+    block-size: 2em;
+    inline-size: 2em;
+    border: 0.4em solid var(--color-hint1);
+    border-block-start-color: transparent;
+    border-radius: 2em;
+    translate: -50% -50%;
+    animation: spinner 0.4s linear infinite;
+  }
+
+}
+
+@keyframes spinner {
+  0% { rotate: 0deg; }
+  100% { rotate: 360deg; }
+}

@@ -5,21 +5,19 @@ Array.from( document.querySelectorAll('[data-email]') ).forEach(e => {
     ds = e.dataset.email,
     em = (ds || e.lastChild.textContent),
     es = em.replace(/\sdot\s/ig, '.').replace(/\{at\}/ig, '@').replace(/\s/g, ''),
-    prop = document.querySelector('[data-property]');
+    prop = document.querySelector('[data-property]'),
+    datefrom = prop?.dataset.datefrom;
 
   let
-    subject = 'enquiry',
-    body = 'property: \nyour name: \nyour phone: \n';
+    subject = 'website enquiry',
+    body = 'my name: \nphone: \n\nenquiry:\n';
 
-  if (prop) {
+  if (datefrom) {
 
-    const
-      beds = parseFloat( prop.dataset.beds || 0 ),
-      datefrom = prop.dataset.datefrom || 'its next availability';
+    const beds = parseFloat( prop.dataset.beds || 1 );
 
-    subject = prop.dataset.property;
-    body = (beds === 1 ? 'I' : 'We') + ' want to view ' + subject + '\nfor possible occupation from ' + datefrom + '.\n\nTelephone number: \n\n';
-    for (let s = 1; s <= beds; s++) body += 'Student ' + s + ' name: \n';
+    subject = 'view ' + prop.dataset.property;
+    body = `${ beds === 1 ? 'I' : 'We' } want to ${ subject }\nfor ${ beds } student${ beds === 1 ? '' : 's' } requiring occupation from ${ datefrom }.\n\nmy name: \nphone: \n\n`;
 
   }
 

@@ -16,7 +16,7 @@
     font-size: 10px !important;
   }
 
-  body > header, footer, nav-heading, video, dt svg, youtube-lite, blockquote::after, .breadcrumb, .tabset, .backnext, .related, .meta, .button, #top {
+  body > header, footer, nav-heading, video, dt svg, youtube-lite, blockquote::after, dialog, dialog::backdrop, .breadcrumb, .tabset, .backnext, .related, .meta, .button, #top {
     display: none !important;
   }
 

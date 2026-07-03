@@ -43,6 +43,8 @@
   --color-hint1: light-dark(oklch(0.53 0.13 54.76), oklch(0.78 0.13 54.76));
   --color-hint2: light-dark(oklch(0.26 0.13 54.76), oklch(0.63 0.13 54.76));
 
+  --color-warn1: light-dark(oklch(0.8 0.2 32), oklch(0.2 0.2 32));
+
   --color-backh: color-mix(in oklab, var(--color-back2), transparent 10%);
 
   --color-shadow: rgba(0,0,0,0.2);

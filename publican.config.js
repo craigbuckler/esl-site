@@ -128,7 +128,8 @@ for (let idx = 0; idx < property?.length || 0; idx++) {
   p.deposit = +period.depositholding + period.depositremainder;
   p.priceweek = period.priceweek;
   p.weeks = Math.round( ( new Date(period.dateto) - new Date(period.datefrom) ) / (1000 * 60 * 60 * 24 * 7) );
-  p.let = period.let; // Math.random() > 0.5;
+  p.let = period.let;
+  // p.let = Math.random() > 0.5; // testing
   p.plan = await imageInfo( `media/plan/${ p.code }-plan.webp`, './src/', publican.config.root );
   p.photo = await allImageInfo( `media/photo/${ p.code }`, './src/', publican.config.root );
 
@@ -139,7 +140,7 @@ for (let idx = 0; idx < property?.length || 0; idx++) {
     {
       title: p.title,
       menu: p.street,
-      description: `${ p.bedrooms }-bed student ${ p.type } in Exeter, ${ p.let ? `currently let for ${ p.code }` : `available from ${ tacs.lib.format.dateHuman(p.datefrom) } for ${ tacs.lib.format.currency(p.priceweek, 'GBP') } per student per week` }.`,
+      description: `${ p.bedrooms }-bed student ${ p.type } in Exeter, ${ p.let ? `currently let for ${ p.year }` : `available for ${ p.weeks } weeks from ${ tacs.lib.format.dateHuman(p.datefrom) } for ${ tacs.lib.format.currency(p.priceweek, 'GBP') } per student per week` }.`,
       prop: p,
       hero: p.photo.filter(i => i.width > i.height).at(0) || p.photo?.[0],
       index: 'weekly',

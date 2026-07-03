@@ -14,7 +14,7 @@ media-src 'self';
 font-src 'self';
 style-src 'self' 'sha256-d36/LWfscriekaGQA4mpQXQiPfia0BMG+saF6WPn50o=' 'sha256-b4EJa4w89jtLvjxsBloYaCfwO1Xltuqrcz89Gtfj77U=';
 script-src 'self' 'sha256-${ tacs.script.get('theme').hash }' 'sha256-${ data.script.get('schema').hash }' 'sha256-${ tacs.script.get('speculation').hash }';
-connect-src 'self';
+connect-src 'self' api.staticforms.dev;
 form-action 'none';
 frame-src www.youtube-nocookie.com maps.google.com www.google.com/maps/;
 manifest-src 'self';
