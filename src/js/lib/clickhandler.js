@@ -43,11 +43,19 @@ document.addEventListener('click', e => {
   if (dialog) {
     e.preventDefault();
     formHandler(target, dialog);
+    return;
   }
 
-  // close open dialog?
-  if (imgDialog?.open && target.closest('dialog') === imgDialog) {
-    imgDialog.close();
+  // close dialog (close button click or imgDialog open?
+  const button = target.closest('button');
+  if ( button?.getAttribute('command') === 'close' ) {
+    closeDialog();
+    return;
+  }
+
+  // close open imgDialog?
+  if (imgDialog?.open) {
+    closeDialog(imgDialog);
     return;
   }
 
@@ -58,6 +66,10 @@ document.addEventListener('click', e => {
       imgDialog = document.body.appendChild( document.createElement('dialog') );
       imgDialog.className = 'imgopen';
       imgDialog.setAttribute('closedBy', 'any');
+    }
+
+    if (!imgDialog.opened) {
+      imgDialog.opened = true;
       history.pushState(null, '');
     }
 
@@ -90,14 +102,19 @@ document.addEventListener('click', e => {
 });
 
 
-// handle back button when dialog is open
-window.addEventListener('popstate', () => {
+// close open dialog when back button used
+window.addEventListener('popstate', () => closeDialog());
 
-  if (imgDialog?.open) {
-    imgDialog.close();
+function closeDialog(dialog) {
+
+  dialog = dialog || document.querySelector('dialog[open]');
+
+  if (dialog?.open) {
+    dialog.close();
+    dialog.opened = false;
   }
 
-});
+}
 
 
 // activate hidden share
@@ -211,6 +228,12 @@ function formHandler(invoker, dialog) {
   if (!form.hp) {
     form.hp = Array.from( dialog.querySelectorAll('input[name*="honeypot"]') );
     form.hp.forEach(hp => hp.removeAttribute('required'));
+  }
+
+  // history state
+  if (!form.dialog.opened) {
+    form.dialog.opened = true;
+    history.pushState(null, '');
   }
 
   // show dialog

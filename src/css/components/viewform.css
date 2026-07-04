@@ -4,7 +4,7 @@ dialog#viewform {
   position: fixed;
   inline-size: auto;
   max-inline-size: 20em;
-  margin: auto;
+  margin: var(--header-fix-height) auto;
   padding: 1em;
   background-color: var(--color-back3);
   border: 0 none;
@@ -12,7 +12,7 @@ dialog#viewform {
   box-shadow: 0 2px 3px #000;
 
   &, &::backdrop {
-    transition: all 0.6s ease-out;
+    transition: all 0.5s cubic-bezier(0.7, 0.1, 0.6, 1.6);
     transition-behavior: allow-discrete;
   }
 
@@ -24,11 +24,11 @@ dialog#viewform {
     @starting-style {
       display: block;
       opacity: 0;
-      transform: translateY(-50%);
+      transform: translateY(50%);
     }
 
     &::backdrop {
-      background-color: rgba(0,0,0,0.2);
+      background-color: rgba(0,0,0,0.5);
       backdrop-filter: blur(3px);
 
       @starting-style {

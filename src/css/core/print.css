@@ -102,6 +102,11 @@
       margin: 0 0 1px 1px;
     }
 
+    /* only print first five images */
+    img:nth-child(n + 6) {
+      display: none !important;
+    }
+
   }
 
   a.proptag {
