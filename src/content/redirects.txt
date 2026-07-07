@@ -1,7 +1,8 @@
 ---
 slug: _redirects
-comment: Cloudflare HTTP redirects
+comment: Cloudflare HTTP redirects, includes quick links
 ---
+${ (toArray(tacs.all)).map(p => p.prop ? `${ tacs.root }${ p.prop.code } ${ p.link } 302` : '').join('\n').trim() }
 /exeter-flats/1-bed-flat-1b-48-old-tiverton-road-exeter-ex4-6ng/ /flat/1-bed-flat-1b-48-old-tiverton-road-exeter-ex4-6ng/ 301
 /exeter-flats/2-bed-flat-2-48-old-tiverton-road-exeter-ex4-6ng/ /flat/2-bed-flat-2-48-old-tiverton-road-exeter-ex4-6ng/ 301
 /exeter-flats/2-bed-flat-3-48-old-tiverton-road-exeter-ex4-6ng/ /flat/2-bed-flat-3-48-old-tiverton-road-exeter-ex4-6ng/ 301

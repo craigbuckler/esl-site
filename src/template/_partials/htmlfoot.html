@@ -33,7 +33,7 @@
 
 <a href="#" id="top" title="top"><svg><use xlink:href="#svg-up"></use></svg></a>
 
-<p class="print">View this page at <strong>${ tacs.config.domain }${ data.link }</strong></p>
+<p class="print">View this page at <strong>${ tacs.config.domain }${ data.prop ? `${ tacs.root }${ data.prop.code }` : data.link }</strong></p>
 
 <p class="print">--COPYRIGHT-- ${ tacs.config.author }</p>
 
