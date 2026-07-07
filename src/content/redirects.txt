@@ -1,15 +1,15 @@
 ---
 slug: _redirects
-comment: Cloudflare HTTP redirects, includes quick links
+comment: Cloudflare HTTP redirects - short links and old URL redirects
 ---
-${ (toArray(tacs.all)).map(p => p.prop ? `${ tacs.root }${ p.prop.code } ${ p.link } 302` : '').join('\n').trim() }
+${ (toArray(tacs.all)).map(p => p.prop ? `${ tacs.root }${ p.prop.code } ${ p.link } 302\n${ tacs.root }${ p.prop.code }/* ${ p.link } 302` : '').join('\n').trim() }
 /exeter-flats/1-bed-flat-1b-48-old-tiverton-road-exeter-ex4-6ng/ /flat/1-bed-flat-1b-48-old-tiverton-road-exeter-ex4-6ng/ 301
 /exeter-flats/2-bed-flat-2-48-old-tiverton-road-exeter-ex4-6ng/ /flat/2-bed-flat-2-48-old-tiverton-road-exeter-ex4-6ng/ 301
 /exeter-flats/2-bed-flat-3-48-old-tiverton-road-exeter-ex4-6ng/ /flat/2-bed-flat-3-48-old-tiverton-road-exeter-ex4-6ng/ 301
 /exeter-flats/2-bed-flat-4-48-old-tiverton-road-exeter-ex4-6ng/ /flat/2-bed-flat-4-48-old-tiverton-road-exeter-ex4-6ng/ 301
 /exeter-flats/2-bed-flat-basement-48-old-tiverton-road-exeter-ex4-6ng/ /flat/2-bed-basement-flat-48-old-tiverton-road-exeter-ex4-6ng/ 301
 /exeter-flats/2-bed-flat-ground-48-old-tiverton-road-exeter-ex4-6ng/ /flat/2-bed-ground-floor-flat-1-48-old-tiverton-road-exeter-ex4-6ng/ 301
-/exeter-flats/ /flat/ 301
+/exeter-flats/* /flat/ 301
 /exeter-houses/6-bed-2-longbrook-terrace-exeter-ex4-4eu/ /house/6-bed-2-longbrook-terrace-exeter-ex4-4eu/ 301
 /exeter-houses/6-bed-3-hillside-avenue-exeter-ex4-4nw/ /house/6-bed-3-hillside-avenue-exeter-ex4-4nw/ 301
 /exeter-houses/7-bed-7-hillsborough-avenue-exeter-ex4-6bw/ /house/7-bed-7-hillsborough-avenue-exeter-ex4-6bw/ 301
@@ -18,7 +18,7 @@ ${ (toArray(tacs.all)).map(p => p.prop ? `${ tacs.root }${ p.prop.code } ${ p.li
 /exeter-houses/7-bed-house-75-howell-road-exeter-ex4-4lz/ /house/7-bed-75-howell-road-exeter-ex4-4lz/ 301
 /exeter-houses/8-bed-house-59-old-tiverton-road-exeter-ex4-6bw/ /house/8-bed-59-old-tiverton-road-exeter-ex4-6ng/ 301
 /exeter-houses/8-bed-house-69-old-tiverton-road-exeter-ex4-6bw/ /house/8-bed-69-old-tiverton-road-exeter-ex4-6ng/ 301
-/exeter-houses/ /house/ 301
+/exeter-houses/* /house/ 301
 /contacts/ https://help.exeter-student-lets.co.uk/contacts/ 301
 /contract/ https://help.exeter-student-lets.co.uk/fees/licence-fee/ 301
 /help/bathrooms/ https://help.exeter-student-lets.co.uk/care/bathrooms/ 301
@@ -49,5 +49,4 @@ ${ (toArray(tacs.all)).map(p => p.prop ? `${ tacs.root }${ p.prop.code } ${ p.li
 /help/security/ https://help.exeter-student-lets.co.uk/behaviour/crime/ 301
 /help/sign-up/ /apply/ 301
 /help/water/ https://help.exeter-student-lets.co.uk/moving-in/utilities/#water-supplier 301
-/help/ https://help.exeter-student-lets.co.uk/ 301
 /help/* https://help.exeter-student-lets.co.uk/ 301
