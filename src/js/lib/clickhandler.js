@@ -46,15 +46,17 @@ document.addEventListener('click', e => {
     return;
   }
 
-  // close dialog (close button click or imgDialog open?
+  // close dialog (button click)
   const button = target.closest('button');
   if ( button?.getAttribute('command') === 'close' ) {
+    e.preventDefault();
     closeDialog();
     return;
   }
 
   // close open imgDialog?
   if (imgDialog?.open) {
+    e.preventDefault();
     closeDialog(imgDialog);
     return;
   }
