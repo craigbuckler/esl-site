@@ -118,7 +118,7 @@ ${ include('_partials/header.html') }
 
         <input type="hidden" name="subject" value="view ${ data.prop.street }">
         <input type="hidden" name="contract" value="${ data.prop.bedrooms }-bed, ${ tacs.lib.format.number( data.prop.weeks ) } weeks from ${ tacs.lib.format.dateHuman( data.prop.datefrom ) }">
-        <input type="hidden" name="website" value="${ tacs.config.domain }${ data.link }">
+        <input type="hidden" name="website" value="${ tacs.config.domain }${ data.shortlink || data.link }">
 
         <div class="formgrid">
 
