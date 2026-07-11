@@ -1,7 +1,7 @@
 ---
 title: Exeter Student Lets
 menu: false
-description: Student properties in Exeter, Devon.
+description: Exeter Student Lets provide quality student flats and houses in Exeter, Devon UK. We are accepting accommodation applications for August ${ tacs.config.year }.
 priority: 1.0
 image: students-01
 ---

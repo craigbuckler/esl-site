@@ -2,7 +2,7 @@
 title: About Exeter Student Lets
 menu: about us
 menuicon: info
-description: More information about Exeter Student Lets accommodation service.
+description: More information about Exeter Student Lets accommodation service. We provide quality flats and houses for students living in Exeter, Devon UK.
 priority: 0.72
 image: exeter-canal-02
 ---

@@ -2,7 +2,7 @@
 title: Exeter student houses
 menu: student houses
 menuicon: house
-description: Student houses in Exeter, Devon, UK.
+description: Our range of student houses available for occupancy in Exeter, Devon, UK from the academic year starting August ${ tacs.config.year }.
 priority: 0.75
 ---
 

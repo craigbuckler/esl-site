@@ -140,7 +140,7 @@ for (let idx = 0; idx < property?.length || 0; idx++) {
     {
       title: p.title,
       menu: p.street,
-      description: `${ p.bedrooms }-bed student ${ p.type } in Exeter, ${ p.let ? `currently let for ${ p.year }` : `available for ${ p.weeks } weeks from ${ tacs.lib.format.dateHuman(p.datefrom) } for ${ tacs.lib.format.currency(p.priceweek, 'GBP') } per student per week` }.`,
+      description: `${ p.bedrooms }-bed student ${ p.type } in Exeter, Devon UK, ${ p.let ? `currently let for ${ p.year } by` : `available for ${ p.weeks } weeks from ${ tacs.lib.format.dateHuman(p.datefrom) } for ${ tacs.lib.format.currency(p.priceweek, 'GBP') } per student per week from` } Exeter Student Lets.`,
       prop: p,
       shortlink: publican.config.root + p.code,
       hero: p.photo.filter(i => i.width > i.height).at(0) || p.photo?.[0],

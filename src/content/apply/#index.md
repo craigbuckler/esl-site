@@ -2,7 +2,7 @@
 title: Apply for occupancy
 menu: contact
 menuicon: email
-description: How to contact us to arrange a viewing of a student property in Exeter.
+description: How to contact Exeter Student Lets to arrange a viewing of a student flat or house in Exeter for possible accommodation from August ${ tacs.config.year }.
 priority: 0.71
 image: students-03
 ---
