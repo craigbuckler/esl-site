@@ -112,7 +112,7 @@ ${ include('_partials/header.html') }
 
       <p>Please enter your details to view</p>
       <p><strong>${ data.prop.street }</strong></p>
-      <p class="f-1">${ data.prop.bedrooms } bedroom${ data.prop.bedrooms === 1 ? '' : 's' }, from ${ tacs.lib.format.dateHuman( data.prop.datefrom ) }</p>
+      <p class="f-1">${ data.prop.bedrooms } bedroom${ data.prop.bedrooms === 1 ? '' : 's' } from <strong>${ tacs.lib.format.dateHuman( data.prop.datefrom ) }</strong></p>
 
       <form action="https://api.staticforms.dev/submit" method="post">
 

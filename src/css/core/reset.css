@@ -12,8 +12,9 @@
   -moz-text-size-adjust: none;
   text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeSpeed;
+  -webkit-tap-highlight-color: transparent;
   image-rendering: -webkit-optimize-contrast;
+  text-rendering: optimizeSpeed;
   interpolate-size: allow-keywords;
   transition-behavior: allow-discrete;
 }

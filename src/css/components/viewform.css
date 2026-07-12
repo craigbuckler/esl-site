@@ -4,7 +4,7 @@ dialog#viewform {
   position: fixed;
   inline-size: auto;
   max-inline-size: 20em;
-  margin: var(--header-fix-height) auto;
+  margin: min(5svb, var(--header-fix-height)) auto;
   padding: 1em;
   background-color: var(--color-back3);
   border: 0 none;

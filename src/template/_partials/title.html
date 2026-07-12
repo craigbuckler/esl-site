@@ -10,7 +10,7 @@
 
     ${ data?.prop ? `<p>${ data?.tags?.sort( tacs.fn.sortBy('tag') ).map(t => `<a href="${ t.link }" class="proptag">${ t.tag }</a>`).join(' ') } ${ data.prop.let ?
         `already let for ${ data.prop.year }` :
-        `available in ${ data.prop.year } for ${ tacs.lib.format.currency( data.prop.priceweek, 'GBP' ).replace('.00', '') } per student per week` }
+        `available from ${ tacs.fn.dateHuman( data.prop.datefrom ) } for ${ tacs.lib.format.currency( data.prop.priceweek, 'GBP' ).replace('.00', '') } per student per week` }
     </p>` : '' }
 
   </div>

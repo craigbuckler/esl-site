@@ -2,6 +2,7 @@
 import { Publican, tacs } from 'publican';
 import { libInit, env, apiFetch, sortBy, normalize } from 'publican.lib';
 import { renderstartData, prerenderInlineScripts } from 'publican.lib/hook';
+import { dateHuman } from 'publican.lib/format';
 import { renderstartTag, prerenderSchema } from './lib/hook.js';
 import * as nav from './lib/nav.js';
 import { imageInfo, allImageInfo } from './lib/image.js';
@@ -107,6 +108,7 @@ publican.config.processPreRender.add( prerenderSchema );
 tacs.fn = tacs.fn || {};
 tacs.fn.nav = nav;
 tacs.fn.sortBy = sortBy;
+tacs.fn.dateHuman = dateHuman;
 tacs.fn.dateFull = d => new Intl.DateTimeFormat(tacs.config.language, { dateStyle: 'full' }).format( new Date(d) );
 
 // create virtual content
