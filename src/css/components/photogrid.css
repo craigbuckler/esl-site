@@ -2,7 +2,7 @@
 .photogrid {
   display: grid;
   grid-auto-flow: dense;
-  grid-template-columns: repeat( auto-fit, minmax(7em, 1fr));
+  grid-template-columns: repeat( auto-fit, minmax(5em, 1fr) );
   gap: 2px;
   margin: 0;
 
@@ -11,6 +11,17 @@
     inline-size: 100%;
     object-fit: cover;
     margin: 0;
+    outline-offset: -0.2rem;
+    transition: filter 0.2s linear;
+    filter: contrast(1) brightness(1);
+
+    &:hover, &:focus, &:active {
+      filter: contrast(1.1) brightness(1.2);
+    }
+  }
+
+  &:has(img:hover, img:focus, img:active) img:not(:hover, :focus, :active) {
+    filter: contrast(1) brightness(0.6);
   }
 
   .land {

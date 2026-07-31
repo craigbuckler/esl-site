@@ -31,7 +31,18 @@ const details = document.getElementsByTagName('details');
 let imgDialog;
 
 // click event handler
-document.addEventListener('click', e => {
+document.addEventListener('click', clickHandler);
+document.addEventListener('keydown', e => {
+
+  const key = e.key, target = e.target;
+
+  if (imgDialog?.open ||
+    (target?.src && target.closest('.imagexpand') && (key === 'Enter' || key === ' '))
+  ) clickHandler(e);
+
+});
+
+function clickHandler(e) {
 
   const target = e.target;
 
@@ -101,7 +112,7 @@ document.addEventListener('click', e => {
   }, 50);
 
 
-});
+}
 
 
 // close open dialog when back button used
@@ -229,7 +240,10 @@ function formHandler(invoker, dialog) {
   // handle honeypots
   if (!form.hp) {
     form.hp = Array.from( dialog.querySelectorAll('input[name*="honeypot"]') );
-    form.hp.forEach(hp => hp.removeAttribute('required'));
+    form.hp.forEach(hp => {
+      hp.removeAttribute('required');
+      hp.removeAttribute('value');
+    });
   }
 
   // history state
