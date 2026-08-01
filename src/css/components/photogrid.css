@@ -20,8 +20,13 @@
     }
   }
 
-  &:has(img:hover, img:focus, img:active) img:not(:hover, :focus, :active) {
-    filter: contrast(1) brightness(0.6);
+  @media (hover) {
+
+    /* dim non-hovered images on desktop devices only */
+    &:has(img:hover, img:focus, img:active) img:not(:hover, :focus, :active) {
+      filter: contrast(0.8) brightness(0.5);
+    }
+
   }
 
   .land {
