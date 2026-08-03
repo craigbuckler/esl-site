@@ -73,7 +73,7 @@ tacs.config.themeColor = env('SITE_THEMECOLOR', '#000');
 tacs.config.email = env('SITE_EMAIL');
 tacs.config.phone = env('SITE_PHONE');
 tacs.config.buildDate = new Date();
-tacs.config.trading = (new Date()).getUTCFullYear() - 1997;
+tacs.config.trading = (new Date()).getUTCFullYear() - env('SITE_TRADEYEAR', 1995);
 
 // initialize library
 libInit(publican, tacs);
