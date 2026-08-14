@@ -3,5 +3,3 @@ ${ data?.pagination?.page?.length && `
     ${ data?.pagination?.page.map(p => tacs.fn.nav.articleLink(p)).join('') }
   </ol></nav>
 ` }
-
-${ tacs.lib.nav.pagination( data.pagination ) }

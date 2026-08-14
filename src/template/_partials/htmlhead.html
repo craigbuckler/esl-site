@@ -34,7 +34,7 @@ ${ tacs.script.get('theme').code }
 
 <!-- search -->
 <meta name="robots" content="${ data.index ? 'index,follow' : 'noindex,follow' }">
-<meta name="staticsearch" content="${ data.isDirIndex || data.isTagIndex || !data.index ? 'noindex' : 'index' }">
+<meta name="staticsearch" content="${ data.isTagIndex || !data.index ? 'noindex' : 'index' }">
 
 <!-- sitemap -->
 <link rel="sitemap" type="application/xml" href="${ tacs.config.domain }${ tacs.root }sitemap.xml">

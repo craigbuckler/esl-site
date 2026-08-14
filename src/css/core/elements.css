@@ -245,6 +245,8 @@ button[command=close] {
 }
 
 svg, use {
+  block-size: 1em;
+  inline-size: 1em;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke: currentColor;

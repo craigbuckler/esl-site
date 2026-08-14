@@ -24,7 +24,7 @@
     "start": "node --env-file=.env --env-file=.env.dev ./publican.config.js"
   },
   "dependencies": {
-    "esbuild": "0.28.1",
+    "esbuild": "0.28.2",
     "image-meta": "0.2.2",
     "publican": "0.12.3",
     "publican.lib": "0.1.3",
