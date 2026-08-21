@@ -28,7 +28,7 @@
     "image-meta": "0.2.2",
     "publican": "0.12.3",
     "publican.lib": "0.1.3",
-    "staticsearch": "0.9.0"
+    "staticsearch": "0.9.1"
   },
   "devDependencies": {
     "livelocalhost": "1.2.7"
