@@ -10,23 +10,40 @@ Your contact details are private and we are committed to protecting them. We pro
 
 * only use information you give voluntarily
 * encrypt, transmit, and store your information in secure systems
-* only permit access to authorised personnel
-* never pass your information to another party without your consent
-* not disclose any information we have gathered about you or your business
+* only permit access to authorised personnel and organisations
 * correct inaccurate information when alerted, and
-* delete your information at your request or once any contract is terminated.
+* delete your information when it is not legally required.
 
 
 ::: section
 
 ## GDPR
 
-In line with the General Data Protection Regulations (GDPR) effective from 25 May 2018, we are committed to protecting and respecting your privacy. This is a summary of our privacy notice to tell you what personal information about you we collect, hold and use. This notice is addressed to our occupants and guarantors including prospective and former occupants and guarantors. Please note that by issuing this notice we do not commit ourselves to giving you occupancy.
+In line with the General Data Protection Regulations (GDPR) effective from 25 May 2018, we are committed to protecting and respecting your privacy. This is a summary of our privacy notice to tell you what personal information about you we collect, hold and use.
+
+This notice is addressed to our occupants and guarantors including prospective and former occupants and guarantors. It does not commit us to providing occupancy.
+
+
+### Why information is required
+
+We require your information to check suitability for occupancy before entering an agreement so we or an authorized management agent can:
+
+1. assess your suitability as an occupant or guarantor.
+
+1. perform legal checks in relation immigration status, deposit protection, and other legal obligations about the occupancy.
+
+1. arrange the occupancy and enter into an agreement and guarantee with you.
+
+1. manage your occupancy and the property including collecting fees and arranging repairs.
+
+1. handle emergency situations.
+
+Your occupancy application cannot proceed until all necessary information is provided.
 
 
 ### Your information
 
-We need information prospective occupant and guarantors. Information we collect, hold, and use about you:
+Information we collect, hold, and use about prospective occupants and guarantors:
 
 * identity and contact details
 * personal and background information
@@ -57,12 +74,13 @@ Your information can be shared with:
 
 * joint occupants
 * guarantors
+* credit reference agencies
 * deposit protection bodies
+* property management agencies
 * gas, electricity, water, and other utility companies
 * internet, email, television, and media providers
 * insurance companies
 * professional advisers
-* letting and managing agents
 * other licensors, e.g. for references
 * contractors and suppliers
 * next of kin (in an emergency)
@@ -79,44 +97,27 @@ Information is stored in electronic form on computing devices and as a hard copy
 We retain information for 12 months if the occupancy does not proceed or for 7 years from the occupancy end date.
 
 
-### Why information is required
-
-We require your information to check your suitability for an occupancy prior to entering an agreement.
-
-1. For contractual performance so we can arrange the occupancy and enter into an agreement and guarantee with you.
-
-1. For contractual performance so we can manage your occupancy and the property including collecting fees and arranging repairs.
-
-1. In cases of an emergency.
-
-1. In our legitimate interests in relation to personal and background information to assess your suitability as an occupant or guarantor.
-
-1. To perform our legal obligations in relation immigration status checks, deposit protection, and other legal obligations about the occupancy.
-
-Your occupancy application cannot proceed until all information is provided.
-
-
 ### Your rights
 
 You have the right to:
 
 * object to us processing data
 * access to your data and details about our processing activities
-* erase your data (the right to be forgotten)
 * restrict processing
 * data portability
+* erase your data (the right to be forgotten)
 
 
 ### Withdrawal of consent
 
-Your consent provides us with a legal gateway to process data about you. You can withdraw consent at any time by contacting us. However, if a legitimate enquiry, in connection with a financial loss, is made by any party or legal action considered, your data maybe used and shared for that purpose under legal obligations and legitimate interest.
+Your consent provides us with a legal gateway to process your data. Unless we receive legitimate data requests such as a court order, you can withdraw consent at any time by <a href="__/apply/" data-email="info {at} exeter-student-lets dot co dot uk">contacting us</a>.
 
 
 ### Complaints
 
-We operate our own internal complaints policy and if you have any concerns about the way in which we collect or handle your data please contact us using the details above.
+We operate an internal complaints policy. Please <a href="__/apply/" data-email="info {at} exeter-student-lets dot co dot uk">contact us</a> if you have any concerns about the way we collect or handle your data.
 
-Additionally, you have the right to lodge a complaint with the supervising authority:
+You also have the right to lodge a complaint with the supervising authority:
 
 Information Commissioner<br>
 Information Commissioner's Office<br>

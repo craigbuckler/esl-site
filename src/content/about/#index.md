@@ -17,7 +17,7 @@ We promise:
 
 * **No agency fees!**
 
-* Deposit protection by [MyDeposits](https://www.mydeposits.co.uk/) with prompt [return](https://help.exeter-student-lets.co.uk/moving-out/deposit/).
+* Deposit protection using an official provider such as [MyDeposits](https://www.mydeposits.co.uk/) with [prompt return](https://help.exeter-student-lets.co.uk/moving-out/deposit/).
 
 * Light and spacious rooms decorated to a high standard.
 
