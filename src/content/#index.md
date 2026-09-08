@@ -14,7 +14,7 @@ ${ tacs.fn.nav.propertyList() }
 
 <p>I just wanted to say a huge thank you for how brilliant you have been with the house. You were always so quick to fix anything and very personable.</p>
 
-<p><cite><svg><use xlink:href="#svg-feedback"></use></svg> Hannah &dash; previous Old Tiverton Road resident</cite></p>
+<p><cite><svg><use xlink:href="#svg-feedback"></use></svg> previous Old Tiverton Road resident</cite></p>
 
 </blockquote>
 
