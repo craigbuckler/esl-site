@@ -9,7 +9,7 @@ image: students-03
 
 To arrange a student property viewing, please contact:
 
-<p class="center f2 wb"><a href="tel:+44-7740-309077" class="nodec"><svg><use xlink:href="#svg-phone"></use></svg> +44 (0) 7740 309 077</a></p>
+<p class="center f2 wb"><a href="tel:+44-7957-651-889" class="nodec"><svg><use xlink:href="#svg-phone"></use></svg> +44 (0) 7957 651 889</a></p>
 
 <p class="center wb"><a href="#" data-email="" class="nodec"><svg><use xlink:href="#svg-email"></use></svg> <span>info {at} exeter-student-lets dot co dot uk</span></a></p>
 
