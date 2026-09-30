@@ -25,8 +25,6 @@ We promise:
 
 * [Modern fitted kitchens](https://help.exeter-student-lets.co.uk/moving-in/inventory/#kitchen).
 
-* [Weekly cleaning service](https://help.exeter-student-lets.co.uk/care/cleaning/).
-
 * Fully compliant with <abbr title="House in Multiple Occupation">HMO</abbr> regulations.
 
 * Regular gas, electricity, water, appliance, and fire safety inspections.

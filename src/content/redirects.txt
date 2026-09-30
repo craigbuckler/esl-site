@@ -20,7 +20,7 @@ ${ (toArray(tacs.all)).map(p => p.shortlink ? `${ p.shortlink } ${ p.link } 302\
 /exeter-houses/8-bed-house-69-old-tiverton-road-exeter-ex4-6bw/ /house/8-bed-69-old-tiverton-road-exeter-ex4-6ng/ 301
 /exeter-houses/* /house/ 301
 /contacts/ https://help.exeter-student-lets.co.uk/contacts/ 301
-/contract/ https://help.exeter-student-lets.co.uk/fees/licence-fee/ 301
+/contract/ https://help.exeter-student-lets.co.uk/fees/occupancy-fee/ 301
 /help/bathrooms/ https://help.exeter-student-lets.co.uk/care/bathrooms/ 301
 /help/behaviour/ https://help.exeter-student-lets.co.uk/behaviour/ 301
 /help/bin-collections/ https://help.exeter-student-lets.co.uk/care/bins/ 301
@@ -28,7 +28,7 @@ ${ (toArray(tacs.all)).map(p => p.shortlink ? `${ p.shortlink } ${ p.link } 302\
 /help/cleaning/ https://help.exeter-student-lets.co.uk/care/cleaning/ 301
 /help/condensation/ https://help.exeter-student-lets.co.uk/care/condensation/ 301
 /help/contacts/ https://help.exeter-student-lets.co.uk/contacts/ 301
-/help/contract/ https://help.exeter-student-lets.co.uk/fees/licence-fee/ 301
+/help/contract/ https://help.exeter-student-lets.co.uk/fees/occupancy-fee/ 301
 /help/council-tax/ https://help.exeter-student-lets.co.uk/moving-in/utilities/#council-tax 301
 /help/electricity/ https://help.exeter-student-lets.co.uk/moving-in/utilities/#electricity-supplier 301
 /help/fire-safety/ https://help.exeter-student-lets.co.uk/care/fire/ 301
@@ -45,7 +45,7 @@ ${ (toArray(tacs.all)).map(p => p.shortlink ? `${ p.shortlink } ${ p.link } 302\
 /help/moving-out/ https://help.exeter-student-lets.co.uk/moving-out/ 301
 /help/parking/ https://help.exeter-student-lets.co.uk/moving-in/utilities/#parking-permits 301
 /help/pest-control/ https://help.exeter-student-lets.co.uk/care/pests/
-/help/rent/ https://help.exeter-student-lets.co.uk/fees/licence-fee/ 301
+/help/rent/ https://help.exeter-student-lets.co.uk/fees/occupancy-fee/ 301
 /help/security/ https://help.exeter-student-lets.co.uk/behaviour/crime/ 301
 /help/sign-up/ /apply/ 301
 /help/water/ https://help.exeter-student-lets.co.uk/moving-in/utilities/#water-supplier 301

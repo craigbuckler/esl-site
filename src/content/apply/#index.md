@@ -33,11 +33,11 @@ To reserve a property after viewing, all students must:
 
 1. Provide their details and their guarantor's details.
 
-1. Where requested, pay an **Initial Holding Deposit** and sign the agreement.
+1. Where requested, pay an initial holding deposit and sign the agreement.
 
-1. Sign the full **Licence to Occupy** agreement and pay the remainder of the deposit.
+1. Sign the full occupancy agreement and pay the remainder of the deposit.
 
-The process takes up to ten working days depending on student and guarantor responses.
+The process takes up to 15 working days depending on student and guarantor responses.
 
 Deposits are protected by an official provider such as [MyDeposits](https://www.mydeposits.co.uk/) and [returned](https://help.exeter-student-lets.co.uk/moving-out/deposit/) when your contract ends.
 

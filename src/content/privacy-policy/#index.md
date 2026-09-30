@@ -53,7 +53,7 @@ Information we collect, hold, and use about prospective occupants and guarantors
 * University/college course
 * employments
 * previous occupancies
-* licence fees, rent, and other payments including arrears
+* occupancy fees and other payments including arrears
 * repairs and complaints
 * council tax and utility information
 * welfare benefits
@@ -81,7 +81,7 @@ Your information can be shared with:
 * internet, email, television, and media providers
 * insurance companies
 * professional advisers
-* other licensors, e.g. for references
+* other property landlords or licensors, e.g. for references
 * contractors and suppliers
 * next of kin (in an emergency)
 * debt collectors and tracing agents
