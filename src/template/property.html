@@ -50,12 +50,8 @@ ${ include('_partials/header.html') }
         <dt><svg><use xlink:href="#svg-utility"></use></svg> utility bills</dt>
         <dd>not included</dd>
 
-        ${ data.prop.type === 'house' ? '' : `
-
-          <dt><svg><use xlink:href="#svg-spanner"></use></svg> services</dt>
-          <dd>weekly clean of communal areas and bedrooms</dd>
-
-        ` }
+        <!-- <dt><svg><use xlink:href="#svg-spanner"></use></svg> services</dt>
+        <dd>weekly clean of communal areas and bedrooms</dd> -->
 
         ${ data.prop.let ? '' : `
 
