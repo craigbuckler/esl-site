@@ -26,11 +26,13 @@ ${ include('_partials/header.html') }
         <dt><svg><use xlink:href="#svg-calendar"></use></svg> move-in</dt>
         <dd>${ tacs.fn.dateFull( data.prop.datefrom ) }</dd>
 
+        <!--
         <dt><svg><use xlink:href="#svg-calendar"></use></svg> move-out</dt>
         <dd>${ tacs.fn.dateFull( data.prop.dateto ) }</dd>
 
         <dt><svg><use xlink:href="#svg-calendar"></use></svg> contract</dt>
         <dd>${ tacs.lib.format.number( data.prop.weeks ) } weeks</dd>
+        -->
 
         <dt><svg><use xlink:href="#svg-bed"></use></svg> bedrooms</dt>
         <dd>${ tacs.lib.format.number( data.prop.bedrooms ) }</dd>
